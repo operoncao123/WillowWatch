@@ -14,6 +14,16 @@
     return RISK_META[levelKey] || RISK_META.low;
   }
 
+  function getRiskStickerAsset(levelKey) {
+    const imageMap = {
+      low: `assets/stickers/risk-low.webp?v=${HANDDRAWN_STICKER_VERSION}`,
+      medium: `assets/stickers/risk-medium.webp?v=${HANDDRAWN_STICKER_VERSION}`,
+      high: `assets/stickers/risk-high.webp?v=${HANDDRAWN_STICKER_VERSION}`,
+    };
+
+    return imageMap[levelKey] || imageMap.low;
+  }
+
   function getStickerVariantOptions() {
     return [
       {
@@ -52,12 +62,7 @@
   }
 
   function getRiskSticker(levelKey, variantKey) {
-    const imageMap = {
-      low: `assets/stickers/risk-low.webp?v=${HANDDRAWN_STICKER_VERSION}`,
-      medium: `assets/stickers/risk-medium.webp?v=${HANDDRAWN_STICKER_VERSION}`,
-      high: `assets/stickers/risk-high.webp?v=${HANDDRAWN_STICKER_VERSION}`,
-    };
-    const src = imageMap[levelKey] || imageMap.low;
+    const src = getRiskStickerAsset(levelKey);
     const label = getRiskMeta(levelKey).label;
     return `<img class="liuxu-sticker-image" data-variant="handdrawn" data-risk="${levelKey}" src="${src}" alt="${label}柳絮风险形象">`;
   }
@@ -108,14 +113,18 @@
     return styleMap[districtId] || { key: 'paper', label: '纸面底纹' };
   }
 
-  function buildForecastCardModel(label, score, level, weather, advice, stickerVariant) {
+  function buildForecastCardModel(label, score, level, weather, advice, stickerVariant, shareKey) {
     const weatherData = weather || {};
+    const normalizedLevel = level || { key: 'low', label: '低风险' };
+    const stickerSrc = getRiskStickerAsset(normalizedLevel && normalizedLevel.key);
 
     return {
       label,
       score: formatNumber(score, 0),
-      level: level || { key: 'low', label: '低风险' },
+      level: normalizedLevel,
       stickerSvg: getRiskSticker(level && level.key, stickerVariant),
+      stickerSrc,
+      shareKey,
       dateLabel: formatDateLabel(weatherData.date),
       weatherLine: `${formatNumber(weatherData.temperatureMin, 1)}℃ / ${formatNumber(weatherData.temperatureMax, 1)}℃`,
       humidity: `${formatNumber(weatherData.humidity, 0)}%`,
@@ -177,17 +186,293 @@
           { label: '连续晴天', value: `x${formatNumber(selected.sunnyStreakBoost, 2)}`, tone: 'sun' },
         ],
         hotspots: Array.isArray(selected.hotspots) ? selected.hotspots : [],
-        todayCard: buildForecastCardModel('今日', selected.score, selected.level, selected.weather, selected.advice, activeStickerVariant),
+        todayCard: buildForecastCardModel('今日', selected.score, selected.level, selected.weather, selected.advice, activeStickerVariant, 'today'),
         tomorrowCard: buildForecastCardModel(
           '明日',
           selected.tomorrow && selected.tomorrow.score,
           selected.tomorrow && selected.tomorrow.level,
           selected.tomorrow && selected.tomorrow.weather,
           selected.tomorrow && selected.tomorrow.advice,
-          activeStickerVariant
+          activeStickerVariant,
+          'tomorrow'
         ),
       },
     };
+  }
+
+  function sanitizeFilenamePart(value) {
+    return String(value || '')
+      .trim()
+      .toLowerCase()
+      .replace(/区/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\u4e00-\u9fa5-]/g, '')
+      .replace(/[\u4e00-\u9fa5]/g, (char) => {
+        const map = {
+          朝: 'chao',
+          阳: 'yang',
+          海: 'hai',
+          淀: 'dian',
+          东: 'dong',
+          城: 'cheng',
+          西: 'xi',
+          丰: 'feng',
+          台: 'tai',
+          石: 'shi',
+          景: 'jing',
+          山: 'shan',
+          通: 'tong',
+          州: 'zhou',
+          顺: 'shun',
+          义: 'yi',
+          昌: 'chang',
+          平: 'ping',
+          大: 'da',
+          兴: 'xing',
+          门: 'men',
+          头: 'tou',
+          沟: 'gou',
+          房: 'fang',
+          怀: 'huai',
+          柔: 'rou',
+          密: 'mi',
+          云: 'yun',
+          延: 'yan',
+          庆: 'qing',
+        };
+        return map[char] || '';
+      }) || 'beijing';
+  }
+
+  function buildShareImageModel(options) {
+    const card = options && options.card ? options.card : {};
+    const districtName = options && options.districtName ? options.districtName : '北京市';
+    const cityName = options && options.cityName ? options.cityName : '北京市';
+    const factors = Array.isArray(options && options.factors) ? options.factors.slice(0, 3) : [];
+
+    return {
+      title: `${districtName}柳絮风险`,
+      subtitle: `${card.label || '今日'} · ${card.dateLabel || '--'}`,
+      districtName,
+      cityName,
+      generatedAt: options && options.generatedAt ? options.generatedAt : '--',
+      levelLabel: card.level && card.level.label ? card.level.label : '低风险',
+      levelKey: card.level && card.level.key ? card.level.key : 'low',
+      score: card.score || '0',
+      advice: card.advice || '',
+      stickerSrc: card.stickerSrc || getRiskStickerAsset(card.level && card.level.key),
+      metrics: [
+        { label: '温度', value: card.weatherLine || '--' },
+        { label: '平均温度', value: card.averageTemp || '--' },
+        { label: '湿度', value: card.humidity || '--' },
+        { label: '风速', value: card.wind || '--' },
+      ],
+      drivers: factors.map((item) => ({
+        label: item.label,
+        value: item.value,
+      })),
+      shareFilename: `liuxu-${sanitizeFilenamePart(districtName)}-${card.shareKey || 'card'}.png`,
+    };
+  }
+
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+      image.src = src;
+    });
+  }
+
+  function roundRectPath(ctx, x, y, width, height, radius) {
+    const safeRadius = Math.min(radius, width / 2, height / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + safeRadius, y);
+    ctx.arcTo(x + width, y, x + width, y + height, safeRadius);
+    ctx.arcTo(x + width, y + height, x, y + height, safeRadius);
+    ctx.arcTo(x, y + height, x, y, safeRadius);
+    ctx.arcTo(x, y, x + width, y, safeRadius);
+    ctx.closePath();
+  }
+
+  function fillRoundRect(ctx, x, y, width, height, radius, fillStyle) {
+    ctx.save();
+    roundRectPath(ctx, x, y, width, height, radius);
+    ctx.fillStyle = fillStyle;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, maxLines) {
+    const content = String(text || '');
+    const chars = Array.from(content);
+    const lines = [];
+    let current = '';
+
+    chars.forEach((char) => {
+      const next = current + char;
+      if (ctx.measureText(next).width > maxWidth && current) {
+        lines.push(current);
+        current = char;
+      } else {
+        current = next;
+      }
+    });
+
+    if (current) {
+      lines.push(current);
+    }
+
+    const limitedLines = typeof maxLines === 'number' ? lines.slice(0, maxLines) : lines;
+    limitedLines.forEach((line, index) => {
+      const isLastVisibleLine = typeof maxLines === 'number' && index === maxLines - 1 && lines.length > maxLines;
+      const output = isLastVisibleLine ? `${line.slice(0, Math.max(0, line.length - 1))}…` : line;
+      ctx.fillText(output, x, y + lineHeight * index);
+    });
+
+    return limitedLines.length;
+  }
+
+  async function renderShareImage(model) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1080;
+    canvas.height = 1440;
+    const ctx = canvas.getContext('2d');
+    const riskMeta = getRiskMeta(model.levelKey);
+    const stickerImage = await loadImage(model.stickerSrc);
+
+    const backgroundGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    backgroundGradient.addColorStop(0, '#f8ebd3');
+    backgroundGradient.addColorStop(0.55, '#f9f0e5');
+    backgroundGradient.addColorStop(1, '#efe7da');
+    ctx.fillStyle = backgroundGradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const glow = ctx.createRadialGradient(860, 180, 40, 860, 180, 360);
+    glow.addColorStop(0, 'rgba(255, 201, 140, 0.35)');
+    glow.addColorStop(1, 'rgba(255, 201, 140, 0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    fillRoundRect(ctx, 72, 70, 936, 1300, 40, 'rgba(255, 250, 242, 0.9)');
+
+    ctx.fillStyle = '#8d7360';
+    ctx.font = '500 28px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText('BEIJING WILLOW WATCH', 118, 132);
+
+    ctx.fillStyle = '#2e231d';
+    ctx.font = '700 78px "Baskerville", "Georgia", "Songti SC", serif';
+    drawWrappedText(ctx, model.title, 118, 240, 580, 84, 2);
+
+    ctx.fillStyle = '#75665d';
+    ctx.font = '500 30px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText(model.subtitle, 118, 410);
+
+    fillRoundRect(ctx, 118, 452, 250, 68, 34, 'rgba(158, 77, 48, 0.08)');
+    ctx.fillStyle = '#8c4f35';
+    ctx.font = '700 30px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText(model.levelLabel, 162, 495);
+
+    fillRoundRect(ctx, 712, 120, 198, 176, 28, '#2a2221');
+    ctx.fillStyle = '#fff6ea';
+    ctx.font = '800 72px "Avenir Next", "PingFang SC", sans-serif';
+    ctx.fillText(model.score, 770, 210);
+    ctx.font = '600 26px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillStyle = '#f3d8ab';
+    ctx.fillText('区级综合分', 770, 252);
+
+    fillRoundRect(ctx, 690, 336, 240, 300, 34, '#fff7ee');
+    ctx.save();
+    roundRectPath(ctx, 718, 364, 184, 184, 28);
+    ctx.clip();
+    ctx.drawImage(stickerImage, 718, 364, 184, 184);
+    ctx.restore();
+    ctx.fillStyle = '#725d52';
+    ctx.font = '600 24px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText('今日柳絮形象', 760, 590);
+
+    fillRoundRect(ctx, 118, 574, 812, 220, 30, '#fffdf9');
+    ctx.fillStyle = '#2e231d';
+    ctx.font = '700 34px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText('出行提醒', 154, 636);
+    ctx.fillStyle = '#6b5f57';
+    ctx.font = '500 28px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    drawWrappedText(ctx, model.advice, 154, 690, 740, 42, 3);
+
+    model.metrics.forEach((metric, index) => {
+      const x = 118 + (index % 2) * 406;
+      const y = 836 + Math.floor(index / 2) * 118;
+      fillRoundRect(ctx, x, y, 372, 92, 24, 'rgba(255, 255, 255, 0.84)');
+      ctx.fillStyle = '#8a7567';
+      ctx.font = '500 24px "PingFang SC", "Hiragino Sans GB", sans-serif';
+      ctx.fillText(metric.label, x + 24, y + 36);
+      ctx.fillStyle = '#2e231d';
+      ctx.font = '700 28px "PingFang SC", "Hiragino Sans GB", sans-serif';
+      ctx.fillText(metric.value, x + 24, y + 68);
+    });
+
+    model.drivers.forEach((driver, index) => {
+      const y = 1096 + index * 84;
+      fillRoundRect(ctx, 118, y, 812, 60, 20, `rgba(${model.levelKey === 'high' ? '226,99,77' : model.levelKey === 'medium' ? '220,155,26' : '53,165,102'}, ${index === 0 ? 0.12 : 0.08})`);
+      ctx.fillStyle = '#5d5148';
+      ctx.font = '600 24px "PingFang SC", "Hiragino Sans GB", sans-serif';
+      ctx.fillText(driver.label, 146, y + 39);
+      ctx.fillStyle = '#2e231d';
+      ctx.font = '700 24px "Avenir Next", "PingFang SC", sans-serif';
+      ctx.fillText(driver.value, 820, y + 39);
+    });
+
+    ctx.fillStyle = '#7f7168';
+    ctx.font = '500 24px "PingFang SC", "Hiragino Sans GB", sans-serif';
+    ctx.fillText(`数据更新时间 ${model.generatedAt}`, 118, 1310);
+    ctx.fillText(model.cityName, 118, 1348);
+
+    return canvas;
+  }
+
+  async function downloadCanvas(canvas, filename) {
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+
+    if (!blob) {
+      throw new Error('Share image export failed');
+    }
+
+    const file = new File([blob], filename, { type: 'image/png' });
+
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: filename,
+      });
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  async function shareForecastCard(shareKey) {
+    if (!currentPageState || !currentPageState.selected) {
+      return;
+    }
+
+    const card = shareKey === 'tomorrow' ? currentPageState.selected.tomorrowCard : currentPageState.selected.todayCard;
+    const model = buildShareImageModel({
+      cityName: currentOverviewModel && currentOverviewModel.city ? currentOverviewModel.city.name : '北京市',
+      districtName: currentPageState.selected.detailTitle.replace(/实时详情$/, ''),
+      generatedAt: currentOverviewModel ? currentOverviewModel.generatedAt : '--',
+      factors: currentPageState.selected.factors,
+      card,
+    });
+
+    const canvas = await renderShareImage(model);
+    await downloadCanvas(canvas, model.shareFilename);
   }
 
   function getApiBase() {
@@ -338,7 +623,10 @@
             <p class="forecast-label">${card.label}</p>
             <div class="forecast-date">${card.dateLabel}</div>
           </div>
-          <div class="forecast-badge ${card.level.key}">${card.level.label}</div>
+          <div class="forecast-actions">
+            <div class="forecast-badge ${card.level.key}">${card.level.label}</div>
+            <button class="share-button" type="button" data-share-key="${card.shareKey}">分享图片</button>
+          </div>
         </div>
 
         <div class="forecast-sticker-wrap">
@@ -402,10 +690,12 @@
 
   let currentStickerVariant = DEFAULT_STICKER_VARIANT;
   let currentOverviewModel = null;
+  let currentPageState = null;
 
   function renderPage(model) {
     currentOverviewModel = model;
     const state = buildPageState(model, currentStickerVariant);
+    currentPageState = state;
 
     document.getElementById('posterHeadline').textContent = state.poster.title;
     document.getElementById('posterDek').textContent = state.poster.dek;
@@ -511,16 +801,44 @@
     });
   }
 
+  function bindDetailCards() {
+    const cards = document.getElementById('detailCards');
+
+    cards.addEventListener('click', async (event) => {
+      const button = event.target.closest('[data-share-key]');
+
+      if (!button) {
+        return;
+      }
+
+      const statusPanel = document.getElementById('statusPanel');
+      const originalText = statusPanel.textContent;
+      statusPanel.textContent = '正在生成分享图片...';
+
+      try {
+        await shareForecastCard(button.getAttribute('data-share-key'));
+        statusPanel.textContent = '分享图片已生成。';
+        setTimeout(() => {
+          statusPanel.textContent = originalText;
+        }, 1800);
+      } catch (error) {
+        statusPanel.textContent = `分享图片生成失败：${error.message}`;
+      }
+    });
+  }
+
   function init() {
     if (typeof document === 'undefined') {
       return;
     }
 
     bindDistrictMatrix();
+    bindDetailCards();
     loadDistrict();
   }
 
   const api = {
+    buildShareImageModel,
     chunkItems,
     buildPageState,
     getDistrictVisualStyle,

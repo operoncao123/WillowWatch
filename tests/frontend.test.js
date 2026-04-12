@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const {
+  buildShareImageModel,
   buildPageState,
   chunkItems,
   getDistrictVisualStyle,
@@ -102,7 +103,46 @@ test('buildPageState converts overview payload into poster and detail view model
   assert.match(state.poster.stickerSvg, /risk-high\.webp/);
   assert.match(state.selected.todayCard.stickerSvg, /risk-high\.webp/);
   assert.match(state.selected.tomorrowCard.stickerSvg, /risk-medium\.webp/);
+  assert.equal(state.selected.todayCard.shareKey, 'today');
+  assert.equal(state.selected.tomorrowCard.shareKey, 'tomorrow');
+  assert.match(state.selected.todayCard.stickerSrc, /risk-high\.webp/);
   assert.equal(state.stickers.length, 3);
+});
+
+test('buildShareImageModel returns a complete share payload for today or tomorrow cards', () => {
+  const payload = buildShareImageModel({
+    cityName: '北京市',
+    districtName: '朝阳区',
+    generatedAt: '2026-04-12 21:40',
+    factors: [
+      { label: '连续积温', value: '5.8℃' },
+      { label: '日照/辐射', value: 'x1.16' },
+      { label: '生态修正', value: 'x1.28' },
+    ],
+    card: {
+      shareKey: 'today',
+      label: '今日',
+      dateLabel: '周日 · 4/12',
+      score: '43',
+      level: { key: 'medium', label: '中风险' },
+      stickerSrc: 'assets/stickers/risk-medium.webp?v=1',
+      weatherLine: '9.5℃ / 25.8℃',
+      humidity: '37%',
+      wind: '2.2 m/s',
+      precipitation: '0 mm',
+      averageTemp: '17.6℃',
+      advice: '建议避开 10:00-16:00 的长时间户外停留。',
+    },
+  });
+
+  assert.equal(payload.title, '朝阳区柳絮风险');
+  assert.equal(payload.subtitle, '今日 · 周日 · 4/12');
+  assert.equal(payload.levelLabel, '中风险');
+  assert.equal(payload.score, '43');
+  assert.equal(payload.stickerSrc, 'assets/stickers/risk-medium.webp?v=1');
+  assert.equal(payload.metrics.length, 4);
+  assert.equal(payload.drivers.length, 3);
+  assert.equal(payload.shareFilename, 'liuxu-chaoyang-today.png');
 });
 
 test('getDistrictVisualStyle groups districts into different visual families', () => {

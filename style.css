@@ -202,11 +202,11 @@ h3 {
 }
 
 h1 {
-  max-width: 8.8ch;
-  font-family: var(--display-cn);
-  font-size: clamp(2.7rem, 10.8vw, 5.35rem);
-  line-height: 0.9;
-  letter-spacing: -0.1em;
+  max-width: 9.1ch;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 10.8vw, 5.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
   text-wrap: balance;
 }
 
@@ -789,6 +789,14 @@ h3 {
   z-index: 1;
 }
 
+.forecast-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .forecast-label {
   margin: 0 0 6px;
   color: #8b7260;
@@ -811,6 +819,27 @@ h3 {
 .forecast-badge.low { background: var(--low); }
 .forecast-badge.medium { background: var(--medium); }
 .forecast-badge.high { background: var(--high); }
+
+.share-button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(37, 27, 21, 0.08);
+  color: #4d4038;
+  font: 600 0.88rem var(--sans);
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.share-button:hover {
+  transform: translateY(-1px);
+  background: rgba(37, 27, 21, 0.12);
+}
+
+.share-button:active {
+  transform: translateY(0);
+}
 
 .forecast-sticker-wrap {
   display: flex;
@@ -956,6 +985,13 @@ h3 {
     padding: 16px 12px 52px;
   }
 
+  h1 {
+    max-width: 8.2ch;
+    font-size: clamp(2.2rem, 12.6vw, 3.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
   .poster,
   .section,
   .status-panel {
@@ -970,6 +1006,16 @@ h3 {
   .fact-chip {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .forecast-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .share-button {
+    padding: 9px 12px;
+    font-size: 0.82rem;
   }
 
   .poster-layout,
