@@ -24,6 +24,7 @@
   --radius-md: 18px;
   --content: 1180px;
   --serif: "Baskerville", "Georgia", "Kaiti SC", "STKaiti", "Songti SC", serif;
+  --display-cn: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
   --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
 }
 
@@ -201,10 +202,12 @@ h3 {
 }
 
 h1 {
-  max-width: 9.2ch;
-  font-size: clamp(2.6rem, 11vw, 5.5rem);
-  line-height: 0.94;
-  letter-spacing: -0.06em;
+  max-width: 8.8ch;
+  font-family: var(--display-cn);
+  font-size: clamp(2.7rem, 10.8vw, 5.35rem);
+  line-height: 0.9;
+  letter-spacing: -0.1em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -418,13 +421,13 @@ h3 {
 
 .district-matrix {
   display: grid;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .matrix-row {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .district-tile {
@@ -433,11 +436,11 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  min-height: 176px;
-  padding: 18px;
+  gap: 8px;
+  min-height: 154px;
+  padding: 14px 14px 12px;
   border: 0;
-  border-radius: 28px;
+  border-radius: 24px;
   box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
   text-align: left;
   cursor: pointer;
@@ -518,11 +521,11 @@ h3 {
 .district-scene {
   position: relative;
   z-index: 1;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   background: rgba(37, 27, 21, 0.08);
   color: rgba(59, 44, 35, 0.72);
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -549,11 +552,11 @@ h3 {
 
 .district-sticker {
   align-self: flex-end;
-  width: 88px;
+  width: 70px;
   aspect-ratio: 1;
-  padding: 6px;
-  margin: -4px 0 2px;
-  border-radius: 24px;
+  padding: 5px;
+  margin: -2px 0 0;
+  border-radius: 20px;
   filter: drop-shadow(0 8px 10px rgba(71, 47, 37, 0.08));
 }
 
@@ -574,22 +577,22 @@ h3 {
 }
 
 .district-tag {
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   background: rgba(37, 27, 21, 0.08);
   color: #6d5547;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
 .district-name {
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 .district-score {
-  font-size: 2.65rem;
-  line-height: 0.98;
+  font-size: 2.2rem;
+  line-height: 0.92;
   font-weight: 900;
   letter-spacing: -0.08em;
 }
@@ -597,14 +600,18 @@ h3 {
 .district-level,
 .district-social {
   color: #6a5c54;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
 }
 
 .district-hint {
   margin-top: auto;
   color: #705f55;
-  font-size: 0.84rem;
-  line-height: 1.55;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .district-tile.style-axis::before {
@@ -973,6 +980,49 @@ h3 {
 
   .matrix-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .district-matrix {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .district-tile {
+    min-height: 128px;
+    padding: 11px 11px 10px;
+    gap: 6px;
+    border-radius: 20px;
+  }
+
+  .district-scene,
+  .district-tag {
+    font-size: 0.58rem;
+    padding: 3px 7px;
+  }
+
+  .district-sticker {
+    width: 54px;
+    padding: 4px;
+    border-radius: 16px;
+  }
+
+  .district-name {
+    font-size: 0.9rem;
+  }
+
+  .district-score {
+    font-size: 1.92rem;
+  }
+
+  .district-level,
+  .district-social {
+    font-size: 0.74rem;
+  }
+
+  .district-hint {
+    font-size: 0.66rem;
+    line-height: 1.28;
   }
 
   .district-tile:nth-child(odd),
