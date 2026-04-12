@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f2dfc0">
+    <meta
+      name="description"
+      content="北京 16 区柳絮风险专题页，融合天气与生态暴露因子，适合移动端浏览与截图传播。"
+    >
+    <meta name="liuxu-api-base" content="">
+    <title>今天北京哪里柳絮最猛？</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="poster" aria-labelledby="posterHeadline">
+        <div class="poster-head">
+          <p class="eyebrow">BEIJING WILLOW INDEX · 16 区现场雷达</p>
+          <div class="poster-chip" id="posterUpdated">正在连接后端数据...</div>
+        </div>
+
+        <div class="poster-layout">
+          <div class="poster-copy">
+            <div class="poster-ribbon">今日概览</div>
+            <h1 id="posterHeadline">今天北京哪里柳絮最猛？</h1>
+            <p class="poster-dek" id="posterDek">
+              正在汇总北京 16 区天气与生态暴露因子，请稍候。
+            </p>
+            <div class="poster-tape-group" aria-hidden="true">
+              <span class="poster-tape">春季过敏提醒</span>
+              <span class="poster-tape">北京 16 区</span>
+              <span class="poster-tape">生态暴露</span>
+            </div>
+          </div>
+
+          <div class="poster-stage">
+            <aside class="poster-score">
+              <p class="score-kicker">当前最热区域</p>
+              <div class="score-badge" id="posterBadge">载入中</div>
+              <p class="score-note" id="posterNote">等待风险引擎返回结果</p>
+            </aside>
+            <div class="poster-character">
+              <div id="posterSticker" class="poster-sticker" aria-hidden="true"></div>
+              <div class="poster-caption">今日状态形象</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-panel" id="statusPanel" role="status" aria-live="polite">
+        正在加载柳絮专题数据...
+      </section>
+
+      <section class="section sticker-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Hand-Drawn Set</p>
+            <h2>柳絮三态形象组</h2>
+          </div>
+          <p class="section-note">低 / 中 / 高风险对应的手绘柳絮形象卡。</p>
+        </div>
+        <div class="sticker-gallery" id="stickerGallery"></div>
+      </section>
+
+      <section class="section matrix-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">District Matrix</p>
+            <h2>16 区热力矩阵</h2>
+          </div>
+          <p class="section-note">按分区场景切成不同风格卡面，点击任一区查看详情。</p>
+        </div>
+        <div class="district-matrix" id="districtMatrix" aria-live="polite"></div>
+      </section>
+
+      <section class="section detail-section">
+        <div class="detail-meta">
+          <p class="section-kicker">Selected District</p>
+          <h2 id="detailTitle">区域详情载入中</h2>
+          <p class="detail-headline" id="detailHeadline">等待风险分解与因子说明。</p>
+
+          <div class="driver-strip" id="driverStrip"></div>
+          <div class="factor-grid" id="factorGrid"></div>
+          <div class="hotspot-strip" id="hotspotStrip"></div>
+        </div>
+
+        <div class="detail-cards" id="detailCards"></div>
+      </section>
+
+      <section class="section notes-section">
+        <div class="note-card">
+          <h3>模型说明</h3>
+          <p>风险分由两部分组成：区级天气分与生态暴露修正。当前版本不再接入社交网络抓取信号。</p>
+        </div>
+        <div class="note-card">
+          <h3>重点区域</h3>
+          <p>如果某区周边大型公园、滨河绿地、植物园或历史杨柳暴露更集中，会在详情区额外提示重点留意区域。</p>
+        </div>
+        <div class="note-card">
+          <h3>免责声明</h3>
+          <p>本页属于区级综合估计，不是街道级精确预报。模型仅用于参考，不替代专业生态或花粉预报。</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app-config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
