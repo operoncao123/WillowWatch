@@ -69,7 +69,13 @@
             <p class="section-kicker">District Matrix</p>
             <h2>16 区热力矩阵</h2>
           </div>
-          <p class="section-note">按分区场景切成不同风格卡面，点击任一区查看详情。</p>
+          <div class="section-head-actions">
+            <div class="day-toggle" id="dayToggle">
+              <button class="day-toggle-btn is-active" data-day="today">今天</button>
+              <button class="day-toggle-btn" data-day="tomorrow">明天</button>
+            </div>
+            <p class="section-note">按分区场景切成不同风格卡面，点击任一区查看详情。</p>
+          </div>
         </div>
         <div class="district-matrix" id="districtMatrix" aria-live="polite"></div>
       </section>

@@ -689,12 +689,39 @@
   }
 
   let currentStickerVariant = DEFAULT_STICKER_VARIANT;
+  let currentMatrixDay = 'today';
   let currentOverviewModel = null;
   let currentPageState = null;
 
+  function buildTomorrowRanking(model) {
+    const districts = Array.isArray(model.districts) ? model.districts : [];
+    return districts
+      .map(function (d) {
+        var tomorrow = d.tomorrow || {};
+        return {
+          id: d.id,
+          name: d.name,
+          shortName: d.shortName,
+          districtTag: d.districtTag,
+          districtHint: d.districtHint,
+          score: tomorrow.score || 0,
+          level: tomorrow.level || { key: 'low', label: '低风险' },
+          ecologyMultiplier: tomorrow.ecologyMultiplier || 1,
+          rollingGdd: tomorrow.rollingGdd || 0,
+          sunshineBoost: tomorrow.sunshineBoost || 1,
+          cloudPenalty: tomorrow.cloudPenalty || 1,
+          sunnyStreakBoost: tomorrow.sunnyStreakBoost || 1,
+        };
+      })
+      .sort(function (a, b) { return b.score - a.score; });
+  }
+
   function renderPage(model) {
     currentOverviewModel = model;
-    const state = buildPageState(model, currentStickerVariant);
+    var effectiveModel = currentMatrixDay === 'tomorrow'
+      ? Object.assign({}, model, { ranking: buildTomorrowRanking(model) })
+      : model;
+    var state = buildPageState(effectiveModel, currentStickerVariant);
     currentPageState = state;
 
     document.getElementById('posterHeadline').textContent = state.poster.title;
@@ -827,6 +854,25 @@
     });
   }
 
+  function bindDayToggle() {
+    var toggle = document.getElementById('dayToggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', function (event) {
+      var button = event.target.closest('.day-toggle-btn');
+      if (!button) return;
+
+      currentMatrixDay = button.getAttribute('data-day');
+      toggle.querySelectorAll('.day-toggle-btn').forEach(function (btn) {
+        btn.classList.toggle('is-active', btn === button);
+      });
+
+      if (currentOverviewModel) {
+        renderPage(currentOverviewModel);
+      }
+    });
+  }
+
   function init() {
     if (typeof document === 'undefined') {
       return;
@@ -834,6 +880,7 @@
 
     bindDistrictMatrix();
     bindDetailCards();
+    bindDayToggle();
     loadDistrict();
   }
 
