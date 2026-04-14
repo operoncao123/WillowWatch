@@ -693,24 +693,24 @@
   let currentOverviewModel = null;
   let currentPageState = null;
 
-  function buildTomorrowRanking(model) {
+  function buildFutureRanking(model, dayKey) {
     const districts = Array.isArray(model.districts) ? model.districts : [];
     return districts
       .map(function (d) {
-        var tomorrow = d.tomorrow || {};
+        var data = d[dayKey] || {};
         return {
           id: d.id,
           name: d.name,
           shortName: d.shortName,
           districtTag: d.districtTag,
           districtHint: d.districtHint,
-          score: tomorrow.score || 0,
-          level: tomorrow.level || { key: 'low', label: '低风险' },
-          ecologyMultiplier: tomorrow.ecologyMultiplier || 1,
-          rollingGdd: tomorrow.rollingGdd || 0,
-          sunshineBoost: tomorrow.sunshineBoost || 1,
-          cloudPenalty: tomorrow.cloudPenalty || 1,
-          sunnyStreakBoost: tomorrow.sunnyStreakBoost || 1,
+          score: data.score || 0,
+          level: data.level || { key: 'low', label: '低风险' },
+          ecologyMultiplier: data.ecologyMultiplier || 1,
+          rollingGdd: data.rollingGdd || 0,
+          sunshineBoost: data.sunshineBoost || 1,
+          cloudPenalty: data.cloudPenalty || 1,
+          sunnyStreakBoost: data.sunnyStreakBoost || 1,
         };
       })
       .sort(function (a, b) { return b.score - a.score; });
@@ -718,8 +718,8 @@
 
   function renderPage(model) {
     currentOverviewModel = model;
-    var effectiveModel = currentMatrixDay === 'tomorrow'
-      ? Object.assign({}, model, { ranking: buildTomorrowRanking(model) })
+    var effectiveModel = currentMatrixDay !== 'today'
+      ? Object.assign({}, model, { ranking: buildFutureRanking(model, currentMatrixDay) })
       : model;
     var state = buildPageState(effectiveModel, currentStickerVariant);
     currentPageState = state;

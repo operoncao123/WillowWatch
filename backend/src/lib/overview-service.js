@@ -98,6 +98,21 @@ function serializeDistrictDetail(district) {
       ecologyMultiplier: district.tomorrow.ecologyMultiplier,
       advice: district.tomorrow.advice,
     },
+    dayAfterTomorrow: district.dayAfterTomorrow ? {
+      score: district.dayAfterTomorrow.finalScore,
+      level: district.dayAfterTomorrow.level,
+      weather: district.dayAfterTomorrow.weather,
+      weatherScore: district.dayAfterTomorrow.weatherScore,
+      rollingGdd: district.dayAfterTomorrow.rollingGdd,
+      gddBoost: district.dayAfterTomorrow.gddBoost,
+      precipitationPenalty: district.dayAfterTomorrow.precipitationPenalty,
+      drynessWindBoost: district.dayAfterTomorrow.drynessWindBoost,
+      sunshineBoost: district.dayAfterTomorrow.sunshineBoost,
+      cloudPenalty: district.dayAfterTomorrow.cloudPenalty,
+      sunnyStreakBoost: district.dayAfterTomorrow.sunnyStreakBoost,
+      ecologyMultiplier: district.dayAfterTomorrow.ecologyMultiplier,
+      advice: district.dayAfterTomorrow.advice,
+    } : undefined,
   };
 }
 
@@ -210,6 +225,7 @@ async function createOverviewModel(options = {}) {
       windSpeed: input.weather.windSpeed,
       precipitation: input.weather.precipitation,
     };
+    const dayAfterTomorrowWeather = input.weather.dayAfterTomorrow || null;
     const today = buildDistrictSnapshot({
       district: input.district,
       weather: input.weather,
@@ -218,11 +234,19 @@ async function createOverviewModel(options = {}) {
       district: input.district,
       weather: tomorrowWeather,
     });
-
-    return {
+    const result = {
       ...today,
       tomorrow,
     };
+
+    if (dayAfterTomorrowWeather) {
+      result.dayAfterTomorrow = buildDistrictSnapshot({
+        district: input.district,
+        weather: dayAfterTomorrowWeather,
+      });
+    }
+
+    return result;
   });
 
   const ranking = rankDistrictSnapshots(snapshots);
@@ -277,6 +301,7 @@ async function createStaticSiteData(options = {}) {
       windSpeed: input.weather.windSpeed,
       precipitation: input.weather.precipitation,
     };
+    const dayAfterTomorrowWeather = input.weather.dayAfterTomorrow || null;
     const today = buildDistrictSnapshot({
       district: input.district,
       weather: input.weather,
@@ -285,11 +310,19 @@ async function createStaticSiteData(options = {}) {
       district: input.district,
       weather: tomorrowWeather,
     });
-
-    return {
+    const result = {
       ...today,
       tomorrow,
     };
+
+    if (dayAfterTomorrowWeather) {
+      result.dayAfterTomorrow = buildDistrictSnapshot({
+        district: input.district,
+        weather: dayAfterTomorrowWeather,
+      });
+    }
+
+    return result;
   });
 
   const ranking = rankDistrictSnapshots(snapshots);

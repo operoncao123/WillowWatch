@@ -12,7 +12,7 @@ function buildBatchWeatherUrl(districts) {
     hourly: 'cloud_cover',
     daily: 'temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_sum,relative_humidity_2m_mean,wind_speed_10m_max,wind_gusts_10m_max,relative_humidity_2m_min,sunshine_duration,shortwave_radiation_sum',
     past_days: '3',
-    forecast_days: '2',
+    forecast_days: '3',
     wind_speed_unit: 'ms',
     timezone: districts.map(() => 'Asia/Shanghai').join(','),
   });
@@ -24,8 +24,9 @@ function mapForecast(payload) {
   const daily = payload.daily || {};
   const hourly = payload.hourly || {};
   const dayCount = Array.isArray(daily.time) ? daily.time.length : 0;
-  const todayIndex = Math.max(0, dayCount - 2);
-  const tomorrowIndex = Math.max(0, dayCount - 1);
+  const todayIndex = Math.max(0, dayCount - 3);
+  const tomorrowIndex = Math.max(0, dayCount - 2);
+  const dayAfterTomorrowIndex = Math.max(0, dayCount - 1);
   const rollingTemperatureMeans = Array.isArray(daily.temperature_2m_mean)
     ? daily.temperature_2m_mean.slice(Math.max(0, todayIndex - 3), todayIndex + 1)
     : [];
@@ -81,6 +82,36 @@ function mapForecast(payload) {
       recentConditions: Array.isArray(daily.time)
         ? daily.time.slice(Math.max(0, tomorrowIndex - 3), tomorrowIndex + 1).map((date, index) => {
             const absoluteIndex = Math.max(0, tomorrowIndex - 3) + index;
+            return {
+              date,
+              sunshineDuration: daily.sunshine_duration && daily.sunshine_duration[absoluteIndex],
+              cloudCoverMean: computeCloudCoverMean(hourly, date),
+            };
+          })
+        : [],
+    },
+    dayAfterTomorrow: {
+      date: daily.time && daily.time[dayAfterTomorrowIndex],
+      temperatureMax: daily.temperature_2m_max && daily.temperature_2m_max[dayAfterTomorrowIndex],
+      temperatureMin: daily.temperature_2m_min && daily.temperature_2m_min[dayAfterTomorrowIndex],
+      temperatureMean: daily.temperature_2m_mean && daily.temperature_2m_mean[dayAfterTomorrowIndex],
+      humidity: daily.relative_humidity_2m_mean && daily.relative_humidity_2m_mean[dayAfterTomorrowIndex],
+      humidityMin: daily.relative_humidity_2m_min && daily.relative_humidity_2m_min[dayAfterTomorrowIndex],
+      windSpeed: daily.wind_speed_10m_max && daily.wind_speed_10m_max[dayAfterTomorrowIndex],
+      windGust: daily.wind_gusts_10m_max && daily.wind_gusts_10m_max[dayAfterTomorrowIndex],
+      precipitation: daily.precipitation_sum && daily.precipitation_sum[dayAfterTomorrowIndex],
+      sunshineDuration: daily.sunshine_duration && daily.sunshine_duration[dayAfterTomorrowIndex],
+      shortwaveRadiationSum: daily.shortwave_radiation_sum && daily.shortwave_radiation_sum[dayAfterTomorrowIndex],
+      cloudCoverMean: computeCloudCoverMean(hourly, daily.time && daily.time[dayAfterTomorrowIndex]),
+      recentPrecipitation: Array.isArray(daily.precipitation_sum)
+        ? daily.precipitation_sum.slice(Math.max(0, dayAfterTomorrowIndex - 2), dayAfterTomorrowIndex).reduce((sum, value) => sum + Number(value || 0), 0)
+        : 0,
+      rollingTemperatureMeans: Array.isArray(daily.temperature_2m_mean)
+        ? daily.temperature_2m_mean.slice(Math.max(0, dayAfterTomorrowIndex - 3), dayAfterTomorrowIndex + 1)
+        : [],
+      recentConditions: Array.isArray(daily.time)
+        ? daily.time.slice(Math.max(0, dayAfterTomorrowIndex - 3), dayAfterTomorrowIndex + 1).map((date, index) => {
+            const absoluteIndex = Math.max(0, dayAfterTomorrowIndex - 3) + index;
             return {
               date,
               sunshineDuration: daily.sunshine_duration && daily.sunshine_duration[absoluteIndex],
