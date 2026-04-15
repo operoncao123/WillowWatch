@@ -16,6 +16,12 @@ if git diff --quiet -- data/overview.json; then
   exit 0
 fi
 
+if git remote get-url origin >/dev/null 2>&1; then
+  git stash --quiet || true
+  git pull --rebase origin HEAD || true
+  git stash pop --quiet || true
+fi
+
 git add data/overview.json
 git -c user.name="Liuxu Auto Update" -c user.email="liuxu-auto-update@local.invalid" commit -m "chore: refresh liuxu static data"
 
