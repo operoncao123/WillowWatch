@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-09 19:07",
+  "generatedAt": "2026-05-09 20:07",
   "city": {
     "id": "beijing",
     "name": "北京市"
   },
   "poster": {
     "headline": "今天北京哪里柳絮最猛？",
-    "dek": "全市已有 7 个区进入高风险，朝阳区 最值得警惕。",
+    "dek": "全市已有 8 个区进入高风险，朝阳区 最值得警惕。",
     "topDistrict": {
       "id": "chaoyang",
       "name": "朝阳区",
@@ -16,7 +16,7 @@
         "label": "高风险"
       }
     },
-    "updatedAt": "2026-05-09 19:07"
+    "updatedAt": "2026-05-09 20:07"
   },
   "topDistrict": {
     "id": "chaoyang",
@@ -52,7 +52,7 @@
       "shortName": "丰台",
       "districtTag": "南城绿博",
       "districtHint": "园博园与南苑绿地是重点片区",
-      "score": 77.1,
+      "score": 71.7,
       "level": {
         "key": "high",
         "label": "高风险"
@@ -60,7 +60,7 @@
       "ecologyMultiplier": 1.15,
       "rollingGdd": 21.5,
       "sunshineBoost": 1.08,
-      "cloudPenalty": 1,
+      "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
     {
@@ -86,14 +86,31 @@
       "shortName": "西城",
       "districtTag": "皇家园林",
       "districtHint": "湖面与老园林片区更要留意",
-      "score": 68.6,
+      "score": 71.3,
       "level": {
         "key": "high",
         "label": "高风险"
       },
       "ecologyMultiplier": 1.08,
       "rollingGdd": 22.1,
-      "sunshineBoost": 1.04,
+      "sunshineBoost": 1.08,
+      "cloudPenalty": 0.93,
+      "sunnyStreakBoost": 1
+    },
+    {
+      "id": "dongcheng",
+      "name": "东城区",
+      "shortName": "东城",
+      "districtTag": "老城中轴",
+      "districtHint": "胡同绿荫与中轴公园交织",
+      "score": 68.1,
+      "level": {
+        "key": "high",
+        "label": "高风险"
+      },
+      "ecologyMultiplier": 1.1,
+      "rollingGdd": 21,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -103,7 +120,7 @@
       "shortName": "房山",
       "districtTag": "河谷绿带",
       "districtHint": "河谷与新区绿化带更关键",
-      "score": 66.1,
+      "score": 63.8,
       "level": {
         "key": "high",
         "label": "高风险"
@@ -115,19 +132,19 @@
       "sunnyStreakBoost": 1
     },
     {
-      "id": "dongcheng",
-      "name": "东城区",
-      "shortName": "东城",
-      "districtTag": "老城中轴",
-      "districtHint": "胡同绿荫与中轴公园交织",
-      "score": 65.5,
+      "id": "haidian",
+      "name": "海淀区",
+      "shortName": "海淀",
+      "districtTag": "园林高校带",
+      "districtHint": "圆明园与植物园周边暴露更强",
+      "score": 63.1,
       "level": {
         "key": "high",
         "label": "高风险"
       },
-      "ecologyMultiplier": 1.1,
-      "rollingGdd": 21,
-      "sunshineBoost": 1.04,
+      "ecologyMultiplier": 1.24,
+      "rollingGdd": 18.4,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -137,31 +154,14 @@
       "shortName": "大兴",
       "districtTag": "南海湿地",
       "districtHint": "湿地周边雨后回升需关注",
-      "score": 63.9,
+      "score": 61.7,
       "level": {
         "key": "high",
         "label": "高风险"
       },
       "ecologyMultiplier": 1.12,
       "rollingGdd": 18,
-      "sunshineBoost": 1.08,
-      "cloudPenalty": 1,
-      "sunnyStreakBoost": 1
-    },
-    {
-      "id": "haidian",
-      "name": "海淀区",
-      "shortName": "海淀",
-      "districtTag": "园林高校带",
-      "districtHint": "圆明园与植物园周边暴露更强",
-      "score": 58.4,
-      "level": {
-        "key": "medium",
-        "label": "中风险"
-      },
-      "ecologyMultiplier": 1.24,
-      "rollingGdd": 18.4,
-      "sunshineBoost": 1,
+      "sunshineBoost": 1.12,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -171,14 +171,14 @@
       "shortName": "石景山",
       "districtTag": "西山风口",
       "districtHint": "山前风口让飘散感更明显",
-      "score": 55,
+      "score": 57.3,
       "level": {
         "key": "medium",
         "label": "中风险"
       },
       "ecologyMultiplier": 1.08,
       "rollingGdd": 19.5,
-      "sunshineBoost": 1,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -200,23 +200,6 @@
       "sunnyStreakBoost": 1
     },
     {
-      "id": "mentougou",
-      "name": "门头沟区",
-      "shortName": "门头沟",
-      "districtTag": "山谷通道",
-      "districtHint": "山前通风通道影响体感强弱",
-      "score": 37.1,
-      "level": {
-        "key": "medium",
-        "label": "中风险"
-      },
-      "ecologyMultiplier": 0.98,
-      "rollingGdd": 16.1,
-      "sunshineBoost": 1.08,
-      "cloudPenalty": 0.93,
-      "sunnyStreakBoost": 1
-    },
-    {
       "id": "miyun",
       "name": "密云区",
       "shortName": "密云",
@@ -229,6 +212,23 @@
       },
       "ecologyMultiplier": 0.94,
       "rollingGdd": 13.1,
+      "sunshineBoost": 1.08,
+      "cloudPenalty": 0.93,
+      "sunnyStreakBoost": 1
+    },
+    {
+      "id": "mentougou",
+      "name": "门头沟区",
+      "shortName": "门头沟",
+      "districtTag": "山谷通道",
+      "districtHint": "山前通风通道影响体感强弱",
+      "score": 35.8,
+      "level": {
+        "key": "medium",
+        "label": "中风险"
+      },
+      "ecologyMultiplier": 0.98,
+      "rollingGdd": 16.1,
       "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
@@ -256,14 +256,14 @@
       "shortName": "平谷",
       "districtTag": "郊野开阔",
       "districtHint": "郊野开阔地受天气驱动更强",
-      "score": 31.3,
+      "score": 30.2,
       "level": {
         "key": "medium",
         "label": "中风险"
       },
       "ecologyMultiplier": 0.93,
       "rollingGdd": 11,
-      "sunshineBoost": 1.12,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -273,14 +273,14 @@
       "shortName": "怀柔",
       "districtTag": "湖区林地",
       "districtHint": "湖区林地局部波动更大",
-      "score": 24.9,
+      "score": 24,
       "level": {
         "key": "low",
         "label": "低风险"
       },
       "ecologyMultiplier": 0.95,
       "rollingGdd": 10.7,
-      "sunshineBoost": 1.12,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1
     },
@@ -319,14 +319,14 @@
         "temperatureMax": 24.4,
         "temperatureMin": 15.7,
         "temperatureMean": 19.7,
-        "humidity": 44,
+        "humidity": 43,
         "humidityMin": 34,
         "windSpeed": 3.3,
         "windGust": 9.1,
-        "precipitation": 0.2,
+        "precipitation": 0.4,
         "recentPrecipitation": 0,
-        "sunshineDuration": 20681,
-        "shortwaveRadiationSum": 14.3,
+        "sunshineDuration": 20802,
+        "shortwaveRadiationSum": 14.4,
         "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           21.9,
@@ -352,7 +352,7 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 20681,
+            "sunshineDuration": 20802,
             "cloudCoverMean": 60
           }
         ]
@@ -384,15 +384,15 @@
           "temperatureMax": 34.4,
           "temperatureMin": 15.2,
           "temperatureMean": 24.8,
-          "humidity": 35,
+          "humidity": 33,
           "humidityMin": 6,
           "windSpeed": 5,
           "windGust": 14.1,
           "precipitation": 0,
-          "recentPrecipitation": 0.2,
-          "sunshineDuration": 41257,
-          "shortwaveRadiationSum": 21.7,
-          "cloudCoverMean": 47,
+          "recentPrecipitation": 0.4,
+          "sunshineDuration": 40377,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 39,
           "rollingTemperatureMeans": [
             19.6,
             20.8,
@@ -412,13 +412,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 20681,
+              "sunshineDuration": 20802,
               "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41257,
-              "cloudCoverMean": 47
+              "sunshineDuration": 40377,
+              "cloudCoverMean": 39
             }
           ]
         },
@@ -444,15 +444,15 @@
           "temperatureMax": 32.1,
           "temperatureMin": 19.1,
           "temperatureMean": 25.9,
-          "humidity": 28,
-          "humidityMin": 15,
+          "humidity": 29,
+          "humidityMin": 12,
           "windSpeed": 3.2,
           "windGust": 7.8,
           "precipitation": 0,
-          "recentPrecipitation": 0.2,
+          "recentPrecipitation": 0.4,
           "sunshineDuration": 42744,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 12,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 32,
           "rollingTemperatureMeans": [
             20.8,
             19.7,
@@ -467,18 +467,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 20681,
+              "sunshineDuration": 20802,
               "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41257,
-              "cloudCoverMean": 47
+              "sunshineDuration": 40377,
+              "cloudCoverMean": 39
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 42744,
-              "cloudCoverMean": 12
+              "cloudCoverMean": 32
             }
           ]
         },
@@ -489,7 +489,7 @@
         "drynessWindBoost": 1.12,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.28,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
@@ -500,7 +500,7 @@
       "shortName": "丰台",
       "districtTag": "南城绿博",
       "districtHint": "园博园与南苑绿地是重点片区",
-      "score": 77.1,
+      "score": 71.7,
       "level": {
         "key": "high",
         "label": "高风险"
@@ -516,9 +516,9 @@
         "windGust": 9.9,
         "precipitation": 0,
         "recentPrecipitation": 0,
-        "sunshineDuration": 18913,
-        "shortwaveRadiationSum": 14.4,
-        "cloudCoverMean": 54,
+        "sunshineDuration": 22080,
+        "shortwaveRadiationSum": 14.5,
+        "cloudCoverMean": 57,
         "rollingTemperatureMeans": [
           22.1,
           19.4,
@@ -543,8 +543,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 18913,
-            "cloudCoverMean": 54
+            "sunshineDuration": 22080,
+            "cloudCoverMean": 57
           }
         ]
       },
@@ -554,7 +554,7 @@
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.12,
       "sunshineBoost": 1.08,
-      "cloudPenalty": 1,
+      "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 1.15,
       "hotspots": [
@@ -575,15 +575,15 @@
           "temperatureMax": 33.9,
           "temperatureMin": 14.9,
           "temperatureMean": 25.2,
-          "humidity": 33,
+          "humidity": 30,
           "humidityMin": 7,
           "windSpeed": 5,
           "windGust": 14.5,
-          "precipitation": 0,
+          "precipitation": 0.1,
           "recentPrecipitation": 0,
-          "sunshineDuration": 41181,
-          "shortwaveRadiationSum": 21.5,
-          "cloudCoverMean": 47,
+          "sunshineDuration": 40006,
+          "shortwaveRadiationSum": 22.5,
+          "cloudCoverMean": 41,
           "rollingTemperatureMeans": [
             19.4,
             20.3,
@@ -603,13 +603,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 18913,
-              "cloudCoverMean": 54
+              "sunshineDuration": 22080,
+              "cloudCoverMean": 57
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41181,
-              "cloudCoverMean": 47
+              "sunshineDuration": 40006,
+              "cloudCoverMean": 41
             }
           ]
         },
@@ -635,15 +635,15 @@
           "temperatureMax": 32.2,
           "temperatureMin": 20,
           "temperatureMean": 26.3,
-          "humidity": 26,
-          "humidityMin": 15,
+          "humidity": 29,
+          "humidityMin": 12,
           "windSpeed": 3.6,
           "windGust": 8.8,
-          "precipitation": 0,
-          "recentPrecipitation": 0,
-          "sunshineDuration": 42757,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 14,
+          "precipitation": 0.3,
+          "recentPrecipitation": 0.1,
+          "sunshineDuration": 42640,
+          "shortwaveRadiationSum": 22.8,
+          "cloudCoverMean": 33,
           "rollingTemperatureMeans": [
             20.3,
             19.7,
@@ -658,18 +658,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 18913,
-              "cloudCoverMean": 54
+              "sunshineDuration": 22080,
+              "cloudCoverMean": 57
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41181,
-              "cloudCoverMean": 47
+              "sunshineDuration": 40006,
+              "cloudCoverMean": 41
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 42757,
-              "cloudCoverMean": 14
+              "sunshineDuration": 42640,
+              "cloudCoverMean": 33
             }
           ]
         },
@@ -680,7 +680,7 @@
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.15,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
@@ -701,15 +701,15 @@
         "temperatureMax": 24.9,
         "temperatureMin": 14.6,
         "temperatureMean": 19.4,
-        "humidity": 46,
-        "humidityMin": 32,
+        "humidity": 45,
+        "humidityMin": 34,
         "windSpeed": 3.7,
         "windGust": 9.6,
-        "precipitation": 0.1,
+        "precipitation": 0.4,
         "recentPrecipitation": 0,
-        "sunshineDuration": 21653,
-        "shortwaveRadiationSum": 14.4,
-        "cloudCoverMean": 62,
+        "sunshineDuration": 21390,
+        "shortwaveRadiationSum": 14.5,
+        "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           21.3,
           19.3,
@@ -734,8 +734,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 21653,
-            "cloudCoverMean": 62
+            "sunshineDuration": 21390,
+            "cloudCoverMean": 60
           }
         ]
       },
@@ -765,15 +765,15 @@
           "temperatureMax": 34.5,
           "temperatureMin": 13,
           "temperatureMean": 23.7,
-          "humidity": 40,
-          "humidityMin": 6,
+          "humidity": 39,
+          "humidityMin": 7,
           "windSpeed": 5.2,
           "windGust": 12.8,
           "precipitation": 0,
-          "recentPrecipitation": 0.1,
-          "sunshineDuration": 41833,
-          "shortwaveRadiationSum": 21.9,
-          "cloudCoverMean": 45,
+          "recentPrecipitation": 0.4,
+          "sunshineDuration": 40923,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 37,
           "rollingTemperatureMeans": [
             19.3,
             20.4,
@@ -793,13 +793,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 21653,
-              "cloudCoverMean": 62
+              "sunshineDuration": 21390,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41833,
-              "cloudCoverMean": 45
+              "sunshineDuration": 40923,
+              "cloudCoverMean": 37
             }
           ]
         },
@@ -825,15 +825,15 @@
           "temperatureMax": 32.1,
           "temperatureMin": 17.2,
           "temperatureMean": 25.2,
-          "humidity": 31,
-          "humidityMin": 15,
+          "humidity": 33,
+          "humidityMin": 14,
           "windSpeed": 3.4,
           "windGust": 7.4,
           "precipitation": 0,
-          "recentPrecipitation": 0.1,
+          "recentPrecipitation": 0.4,
           "sunshineDuration": 42858,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 12,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 33,
           "rollingTemperatureMeans": [
             20.4,
             19.4,
@@ -848,18 +848,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 21653,
-              "cloudCoverMean": 62
+              "sunshineDuration": 21390,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41833,
-              "cloudCoverMean": 45
+              "sunshineDuration": 40923,
+              "cloudCoverMean": 37
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 42858,
-              "cloudCoverMean": 12
+              "cloudCoverMean": 33
             }
           ]
         },
@@ -881,7 +881,7 @@
       "shortName": "西城",
       "districtTag": "皇家园林",
       "districtHint": "湖面与老园林片区更要留意",
-      "score": 68.6,
+      "score": 71.3,
       "level": {
         "key": "high",
         "label": "高风险"
@@ -895,11 +895,11 @@
         "humidityMin": 34,
         "windSpeed": 3.1,
         "windGust": 9.6,
-        "precipitation": 0.1,
+        "precipitation": 0,
         "recentPrecipitation": 0,
-        "sunshineDuration": 17744,
-        "shortwaveRadiationSum": 14,
-        "cloudCoverMean": 59,
+        "sunshineDuration": 19904,
+        "shortwaveRadiationSum": 14.1,
+        "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           22.4,
           19.4,
@@ -924,8 +924,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 17744,
-            "cloudCoverMean": 59
+            "sunshineDuration": 19904,
+            "cloudCoverMean": 60
           }
         ]
       },
@@ -934,7 +934,7 @@
       "gddBoost": 1.18,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.16,
-      "sunshineBoost": 1.04,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 1.08,
@@ -956,15 +956,15 @@
           "temperatureMax": 33.5,
           "temperatureMin": 14.8,
           "temperatureMean": 25,
-          "humidity": 35,
-          "humidityMin": 8,
+          "humidity": 30,
+          "humidityMin": 7,
           "windSpeed": 5.6,
           "windGust": 14.8,
           "precipitation": 0,
-          "recentPrecipitation": 0.1,
-          "sunshineDuration": 40592,
-          "shortwaveRadiationSum": 21.7,
-          "cloudCoverMean": 49,
+          "recentPrecipitation": 0,
+          "sunshineDuration": 40299,
+          "shortwaveRadiationSum": 22.5,
+          "cloudCoverMean": 41,
           "rollingTemperatureMeans": [
             19.4,
             20.5,
@@ -984,13 +984,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 17744,
-              "cloudCoverMean": 59
+              "sunshineDuration": 19904,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40592,
-              "cloudCoverMean": 49
+              "sunshineDuration": 40299,
+              "cloudCoverMean": 41
             }
           ]
         },
@@ -1016,15 +1016,15 @@
           "temperatureMax": 32.2,
           "temperatureMin": 19.4,
           "temperatureMean": 26.2,
-          "humidity": 26,
-          "humidityMin": 14,
+          "humidity": 28,
+          "humidityMin": 12,
           "windSpeed": 3.5,
           "windGust": 8.5,
-          "precipitation": 0,
-          "recentPrecipitation": 0.1,
+          "precipitation": 0.1,
+          "recentPrecipitation": 0,
           "sunshineDuration": 42747,
           "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 12,
+          "cloudCoverMean": 31,
           "rollingTemperatureMeans": [
             20.5,
             19.8,
@@ -1039,18 +1039,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 17744,
-              "cloudCoverMean": 59
+              "sunshineDuration": 19904,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40592,
-              "cloudCoverMean": 49
+              "sunshineDuration": 40299,
+              "cloudCoverMean": 41
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 42747,
-              "cloudCoverMean": 12
+              "cloudCoverMean": 31
             }
           ]
         },
@@ -1061,198 +1061,8 @@
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.08,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      }
-    },
-    {
-      "id": "fangshan",
-      "name": "房山区",
-      "shortName": "房山",
-      "districtTag": "河谷绿带",
-      "districtHint": "河谷与新区绿化带更关键",
-      "score": 66.1,
-      "level": {
-        "key": "high",
-        "label": "高风险"
-      },
-      "weather": {
-        "date": "2026-05-09",
-        "temperatureMax": 24.4,
-        "temperatureMin": 13.9,
-        "temperatureMean": 19.3,
-        "humidity": 45,
-        "humidityMin": 34,
-        "windSpeed": 3,
-        "windGust": 9.6,
-        "precipitation": 0,
-        "recentPrecipitation": 0,
-        "sunshineDuration": 21611,
-        "shortwaveRadiationSum": 14.5,
-        "cloudCoverMean": 51,
-        "rollingTemperatureMeans": [
-          21.7,
-          19.4,
-          19.3,
-          19.3
-        ],
-        "recentConditions": [
-          {
-            "date": "2026-05-06",
-            "sunshineDuration": 14821,
-            "cloudCoverMean": 94
-          },
-          {
-            "date": "2026-05-07",
-            "sunshineDuration": 42812,
-            "cloudCoverMean": 4
-          },
-          {
-            "date": "2026-05-08",
-            "sunshineDuration": 42332,
-            "cloudCoverMean": 11
-          },
-          {
-            "date": "2026-05-09",
-            "sunshineDuration": 21611,
-            "cloudCoverMean": 51
-          }
-        ]
-      },
-      "weatherScore": 43,
-      "rollingGdd": 19.7,
-      "gddBoost": 1.18,
-      "precipitationPenalty": 1,
-      "drynessWindBoost": 1.16,
-      "sunshineBoost": 1.08,
-      "cloudPenalty": 1,
-      "sunnyStreakBoost": 1,
-      "ecologyMultiplier": 1.04,
-      "hotspots": [
-        "长阳公园",
-        "小清河沿线绿地"
-      ],
-      "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。",
-      "headline": "房山区当前以气象条件和区级生态暴露驱动为主。",
-      "tomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-10",
-          "temperatureMax": 33,
-          "temperatureMin": 12.2,
-          "temperatureMean": 24,
-          "humidity": 36,
-          "humidityMin": 9,
-          "windSpeed": 6.2,
-          "windGust": 13.4,
-          "precipitation": 0,
-          "recentPrecipitation": 0,
-          "sunshineDuration": 41447,
-          "shortwaveRadiationSum": 21.3,
-          "cloudCoverMean": 48,
-          "rollingTemperatureMeans": [
-            19.4,
-            19.3,
-            19.3,
-            24
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-07",
-              "sunshineDuration": 42812,
-              "cloudCoverMean": 4
-            },
-            {
-              "date": "2026-05-08",
-              "sunshineDuration": 42332,
-              "cloudCoverMean": 11
-            },
-            {
-              "date": "2026-05-09",
-              "sunshineDuration": 21611,
-              "cloudCoverMean": 51
-            },
-            {
-              "date": "2026-05-10",
-              "sunshineDuration": 41447,
-              "cloudCoverMean": 48
-            }
-          ]
-        },
-        "weatherScore": 100,
-        "rollingGdd": 22,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.16,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 1.04,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      },
-      "dayAfterTomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-11",
-          "temperatureMax": 32.3,
-          "temperatureMin": 18.4,
-          "temperatureMean": 25.6,
-          "humidity": 30,
-          "humidityMin": 15,
-          "windSpeed": 3.7,
-          "windGust": 7.7,
-          "precipitation": 0,
-          "recentPrecipitation": 0,
-          "sunshineDuration": 42653,
-          "shortwaveRadiationSum": 22.6,
-          "cloudCoverMean": 16,
-          "rollingTemperatureMeans": [
-            19.3,
-            19.3,
-            24,
-            25.6
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-08",
-              "sunshineDuration": 42332,
-              "cloudCoverMean": 11
-            },
-            {
-              "date": "2026-05-09",
-              "sunshineDuration": 21611,
-              "cloudCoverMean": 51
-            },
-            {
-              "date": "2026-05-10",
-              "sunshineDuration": 41447,
-              "cloudCoverMean": 48
-            },
-            {
-              "date": "2026-05-11",
-              "sunshineDuration": 42653,
-              "cloudCoverMean": 16
-            }
-          ]
-        },
-        "weatherScore": 100,
-        "rollingGdd": 28.2,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.12,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 1.04,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -1262,7 +1072,7 @@
       "shortName": "东城",
       "districtTag": "老城中轴",
       "districtHint": "胡同绿荫与中轴公园交织",
-      "score": 65.5,
+      "score": 68.1,
       "level": {
         "key": "high",
         "label": "高风险"
@@ -1272,15 +1082,15 @@
         "temperatureMax": 24.5,
         "temperatureMin": 15.4,
         "temperatureMean": 19.5,
-        "humidity": 45,
+        "humidity": 44,
         "humidityMin": 33,
         "windSpeed": 2.9,
         "windGust": 8.3,
         "precipitation": 0.3,
         "recentPrecipitation": 0,
-        "sunshineDuration": 18504,
-        "shortwaveRadiationSum": 13.9,
-        "cloudCoverMean": 61,
+        "sunshineDuration": 20360,
+        "shortwaveRadiationSum": 14.1,
+        "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           22.3,
           19.1,
@@ -1305,8 +1115,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 18504,
-            "cloudCoverMean": 61
+            "sunshineDuration": 20360,
+            "cloudCoverMean": 60
           }
         ]
       },
@@ -1315,7 +1125,7 @@
       "gddBoost": 1.18,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.16,
-      "sunshineBoost": 1.04,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 1.1,
@@ -1337,15 +1147,15 @@
           "temperatureMax": 33.7,
           "temperatureMin": 13.6,
           "temperatureMean": 24.2,
-          "humidity": 37,
-          "humidityMin": 8,
+          "humidity": 35,
+          "humidityMin": 7,
           "windSpeed": 5.8,
           "windGust": 14.4,
           "precipitation": 0,
           "recentPrecipitation": 0.3,
-          "sunshineDuration": 40465,
-          "shortwaveRadiationSum": 21.8,
-          "cloudCoverMean": 51,
+          "sunshineDuration": 40264,
+          "shortwaveRadiationSum": 22.3,
+          "cloudCoverMean": 38,
           "rollingTemperatureMeans": [
             19.1,
             20.1,
@@ -1365,13 +1175,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 18504,
-              "cloudCoverMean": 61
+              "sunshineDuration": 20360,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40465,
-              "cloudCoverMean": 51
+              "sunshineDuration": 40264,
+              "cloudCoverMean": 38
             }
           ]
         },
@@ -1397,15 +1207,15 @@
           "temperatureMax": 32.5,
           "temperatureMin": 18,
           "temperatureMean": 25.7,
-          "humidity": 28,
-          "humidityMin": 13,
+          "humidity": 29,
+          "humidityMin": 12,
           "windSpeed": 3.1,
           "windGust": 8,
           "precipitation": 0,
           "recentPrecipitation": 0.3,
           "sunshineDuration": 42620,
           "shortwaveRadiationSum": 22.6,
-          "cloudCoverMean": 12,
+          "cloudCoverMean": 30,
           "rollingTemperatureMeans": [
             20.1,
             19.5,
@@ -1420,18 +1230,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 18504,
-              "cloudCoverMean": 61
+              "sunshineDuration": 20360,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40465,
-              "cloudCoverMean": 51
+              "sunshineDuration": 40264,
+              "cloudCoverMean": 38
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 42620,
-              "cloudCoverMean": 12
+              "cloudCoverMean": 30
             }
           ]
         },
@@ -1442,80 +1252,80 @@
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.1,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
     {
-      "id": "daxing",
-      "name": "大兴区",
-      "shortName": "大兴",
-      "districtTag": "南海湿地",
-      "districtHint": "湿地周边雨后回升需关注",
-      "score": 63.9,
+      "id": "fangshan",
+      "name": "房山区",
+      "shortName": "房山",
+      "districtTag": "河谷绿带",
+      "districtHint": "河谷与新区绿化带更关键",
+      "score": 63.8,
       "level": {
         "key": "high",
         "label": "高风险"
       },
       "weather": {
         "date": "2026-05-09",
-        "temperatureMax": 24.7,
-        "temperatureMin": 13.4,
-        "temperatureMean": 19,
-        "humidity": 48,
+        "temperatureMax": 24.4,
+        "temperatureMin": 13.9,
+        "temperatureMean": 19.3,
+        "humidity": 46,
         "humidityMin": 36,
-        "windSpeed": 4.7,
+        "windSpeed": 3,
         "windGust": 9.6,
         "precipitation": 0.3,
         "recentPrecipitation": 0,
-        "sunshineDuration": 26082,
-        "shortwaveRadiationSum": 15.8,
-        "cloudCoverMean": 52,
+        "sunshineDuration": 25468,
+        "shortwaveRadiationSum": 14.8,
+        "cloudCoverMean": 50,
         "rollingTemperatureMeans": [
-          20.9,
-          18.7,
+          21.7,
           19.4,
-          19
+          19.3,
+          19.3
         ],
         "recentConditions": [
           {
             "date": "2026-05-06",
-            "sunshineDuration": 11616,
-            "cloudCoverMean": 95
+            "sunshineDuration": 14821,
+            "cloudCoverMean": 94
           },
           {
             "date": "2026-05-07",
-            "sunshineDuration": 42947,
-            "cloudCoverMean": 2
+            "sunshineDuration": 42812,
+            "cloudCoverMean": 4
           },
           {
             "date": "2026-05-08",
-            "sunshineDuration": 42529,
-            "cloudCoverMean": 7
+            "sunshineDuration": 42332,
+            "cloudCoverMean": 11
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 26082,
-            "cloudCoverMean": 52
+            "sunshineDuration": 25468,
+            "cloudCoverMean": 50
           }
         ]
       },
-      "weatherScore": 40,
-      "rollingGdd": 18,
+      "weatherScore": 43,
+      "rollingGdd": 19.7,
       "gddBoost": 1.18,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.12,
       "sunshineBoost": 1.08,
       "cloudPenalty": 1,
       "sunnyStreakBoost": 1,
-      "ecologyMultiplier": 1.12,
+      "ecologyMultiplier": 1.04,
       "hotspots": [
-        "念坛公园",
-        "南海子公园"
+        "长阳公园",
+        "小清河沿线绿地"
       ],
       "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。",
-      "headline": "大兴区当前以气象条件和区级生态暴露驱动为主。",
+      "headline": "房山区当前以气象条件和区级生态暴露驱动为主。",
       "tomorrow": {
         "score": 100,
         "level": {
@@ -1524,56 +1334,56 @@
         },
         "weather": {
           "date": "2026-05-10",
-          "temperatureMax": 33.2,
-          "temperatureMin": 14.6,
+          "temperatureMax": 33,
+          "temperatureMin": 12.2,
           "temperatureMean": 24,
-          "humidity": 38,
-          "humidityMin": 8,
-          "windSpeed": 6.5,
-          "windGust": 14.3,
+          "humidity": 37,
+          "humidityMin": 9,
+          "windSpeed": 6.2,
+          "windGust": 13.4,
           "precipitation": 0,
           "recentPrecipitation": 0.3,
-          "sunshineDuration": 42470,
-          "shortwaveRadiationSum": 21.5,
-          "cloudCoverMean": 47,
+          "sunshineDuration": 38176,
+          "shortwaveRadiationSum": 22.1,
+          "cloudCoverMean": 45,
           "rollingTemperatureMeans": [
-            18.7,
             19.4,
-            19,
+            19.3,
+            19.3,
             24
           ],
           "recentConditions": [
             {
               "date": "2026-05-07",
-              "sunshineDuration": 42947,
-              "cloudCoverMean": 2
+              "sunshineDuration": 42812,
+              "cloudCoverMean": 4
             },
             {
               "date": "2026-05-08",
-              "sunshineDuration": 42529,
-              "cloudCoverMean": 7
+              "sunshineDuration": 42332,
+              "cloudCoverMean": 11
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 26082,
-              "cloudCoverMean": 52
+              "sunshineDuration": 25468,
+              "cloudCoverMean": 50
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 42470,
-              "cloudCoverMean": 47
+              "sunshineDuration": 38176,
+              "cloudCoverMean": 45
             }
           ]
         },
         "weatherScore": 100,
-        "rollingGdd": 21.1,
+        "rollingGdd": 22,
         "gddBoost": 1.18,
         "precipitationPenalty": 1,
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
         "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 1.12,
+        "ecologyMultiplier": 1.04,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       },
       "dayAfterTomorrow": {
@@ -1584,56 +1394,56 @@
         },
         "weather": {
           "date": "2026-05-11",
-          "temperatureMax": 31.5,
-          "temperatureMin": 17.7,
-          "temperatureMean": 24.9,
-          "humidity": 31,
-          "humidityMin": 17,
-          "windSpeed": 4.4,
-          "windGust": 7.9,
-          "precipitation": 0,
+          "temperatureMax": 32.3,
+          "temperatureMin": 18.4,
+          "temperatureMean": 25.6,
+          "humidity": 34,
+          "humidityMin": 16,
+          "windSpeed": 3.7,
+          "windGust": 7.7,
+          "precipitation": 0.1,
           "recentPrecipitation": 0.3,
-          "sunshineDuration": 42658,
+          "sunshineDuration": 42535,
           "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 16,
+          "cloudCoverMean": 33,
           "rollingTemperatureMeans": [
-            19.4,
-            19,
+            19.3,
+            19.3,
             24,
-            24.9
+            25.6
           ],
           "recentConditions": [
             {
               "date": "2026-05-08",
-              "sunshineDuration": 42529,
-              "cloudCoverMean": 7
+              "sunshineDuration": 42332,
+              "cloudCoverMean": 11
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 26082,
-              "cloudCoverMean": 52
+              "sunshineDuration": 25468,
+              "cloudCoverMean": 50
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 42470,
-              "cloudCoverMean": 47
+              "sunshineDuration": 38176,
+              "cloudCoverMean": 45
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 42658,
-              "cloudCoverMean": 16
+              "sunshineDuration": 42535,
+              "cloudCoverMean": 33
             }
           ]
         },
-        "weatherScore": 99,
-        "rollingGdd": 27.3,
+        "weatherScore": 100,
+        "rollingGdd": 28.2,
         "gddBoost": 1.18,
         "precipitationPenalty": 1,
         "drynessWindBoost": 1.12,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 1.12,
+        "sunnyStreakBoost": 1.06,
+        "ecologyMultiplier": 1.04,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -1643,25 +1453,25 @@
       "shortName": "海淀",
       "districtTag": "园林高校带",
       "districtHint": "圆明园与植物园周边暴露更强",
-      "score": 58.4,
+      "score": 63.1,
       "level": {
-        "key": "medium",
-        "label": "中风险"
+        "key": "high",
+        "label": "高风险"
       },
       "weather": {
         "date": "2026-05-09",
         "temperatureMax": 24,
         "temperatureMin": 14.1,
         "temperatureMean": 18.7,
-        "humidity": 46,
-        "humidityMin": 33,
+        "humidity": 45,
+        "humidityMin": 35,
         "windSpeed": 3.2,
         "windGust": 8,
-        "precipitation": 0.4,
+        "precipitation": 0.1,
         "recentPrecipitation": 0,
-        "sunshineDuration": 16984,
-        "shortwaveRadiationSum": 13.8,
-        "cloudCoverMean": 61,
+        "sunshineDuration": 20692,
+        "shortwaveRadiationSum": 14,
+        "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           21.9,
           18.5,
@@ -1686,8 +1496,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 16984,
-            "cloudCoverMean": 61
+            "sunshineDuration": 20692,
+            "cloudCoverMean": 60
           }
         ]
       },
@@ -1696,7 +1506,7 @@
       "gddBoost": 1.18,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.16,
-      "sunshineBoost": 1,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 1.24,
@@ -1705,7 +1515,7 @@
         "圆明园",
         "国家植物园"
       ],
-      "advice": "建议避开 10:00-16:00 的长时间户外停留，经过公园或林地边缘时做好基础防护。",
+      "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。",
       "headline": "海淀区当前以气象条件和区级生态暴露驱动为主。",
       "tomorrow": {
         "score": 100,
@@ -1718,15 +1528,15 @@
           "temperatureMax": 34,
           "temperatureMin": 12.5,
           "temperatureMean": 23.6,
-          "humidity": 36,
-          "humidityMin": 7,
+          "humidity": 34,
+          "humidityMin": 8,
           "windSpeed": 5.4,
           "windGust": 13.6,
           "precipitation": 0,
-          "recentPrecipitation": 0.4,
-          "sunshineDuration": 40199,
-          "shortwaveRadiationSum": 21.8,
-          "cloudCoverMean": 51,
+          "recentPrecipitation": 0.1,
+          "sunshineDuration": 40094,
+          "shortwaveRadiationSum": 22.3,
+          "cloudCoverMean": 44,
           "rollingTemperatureMeans": [
             18.5,
             19.3,
@@ -1746,13 +1556,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 16984,
-              "cloudCoverMean": 61
+              "sunshineDuration": 20692,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40199,
-              "cloudCoverMean": 51
+              "sunshineDuration": 40094,
+              "cloudCoverMean": 44
             }
           ]
         },
@@ -1778,15 +1588,15 @@
           "temperatureMax": 32.2,
           "temperatureMin": 16.9,
           "temperatureMean": 25.2,
-          "humidity": 29,
-          "humidityMin": 13,
+          "humidity": 33,
+          "humidityMin": 12,
           "windSpeed": 3.5,
           "windGust": 8.3,
-          "precipitation": 0,
-          "recentPrecipitation": 0.4,
-          "sunshineDuration": 42740,
+          "precipitation": 0.2,
+          "recentPrecipitation": 0.1,
+          "sunshineDuration": 42839,
           "shortwaveRadiationSum": 22.8,
-          "cloudCoverMean": 12,
+          "cloudCoverMean": 30,
           "rollingTemperatureMeans": [
             19.3,
             18.7,
@@ -1801,18 +1611,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 16984,
-              "cloudCoverMean": 61
+              "sunshineDuration": 20692,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40199,
-              "cloudCoverMean": 51
+              "sunshineDuration": 40094,
+              "cloudCoverMean": 44
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 42740,
-              "cloudCoverMean": 12
+              "sunshineDuration": 42839,
+              "cloudCoverMean": 30
             }
           ]
         },
@@ -1823,8 +1633,198 @@
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.24,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      }
+    },
+    {
+      "id": "daxing",
+      "name": "大兴区",
+      "shortName": "大兴",
+      "districtTag": "南海湿地",
+      "districtHint": "湿地周边雨后回升需关注",
+      "score": 61.7,
+      "level": {
+        "key": "high",
+        "label": "高风险"
+      },
+      "weather": {
+        "date": "2026-05-09",
+        "temperatureMax": 24.7,
+        "temperatureMin": 13.4,
+        "temperatureMean": 19,
+        "humidity": 48,
+        "humidityMin": 37,
+        "windSpeed": 4.7,
+        "windGust": 9.6,
+        "precipitation": 0.2,
+        "recentPrecipitation": 0,
+        "sunshineDuration": 28378,
+        "shortwaveRadiationSum": 15.7,
+        "cloudCoverMean": 55,
+        "rollingTemperatureMeans": [
+          20.9,
+          18.7,
+          19.4,
+          19
+        ],
+        "recentConditions": [
+          {
+            "date": "2026-05-06",
+            "sunshineDuration": 11616,
+            "cloudCoverMean": 95
+          },
+          {
+            "date": "2026-05-07",
+            "sunshineDuration": 42947,
+            "cloudCoverMean": 2
+          },
+          {
+            "date": "2026-05-08",
+            "sunshineDuration": 42529,
+            "cloudCoverMean": 7
+          },
+          {
+            "date": "2026-05-09",
+            "sunshineDuration": 28378,
+            "cloudCoverMean": 55
+          }
+        ]
+      },
+      "weatherScore": 40,
+      "rollingGdd": 18,
+      "gddBoost": 1.18,
+      "precipitationPenalty": 1,
+      "drynessWindBoost": 1.12,
+      "sunshineBoost": 1.12,
+      "cloudPenalty": 0.93,
+      "sunnyStreakBoost": 1,
+      "ecologyMultiplier": 1.12,
+      "hotspots": [
+        "念坛公园",
+        "南海子公园"
+      ],
+      "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。",
+      "headline": "大兴区当前以气象条件和区级生态暴露驱动为主。",
+      "tomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-10",
+          "temperatureMax": 33.2,
+          "temperatureMin": 14.6,
+          "temperatureMean": 24,
+          "humidity": 36,
+          "humidityMin": 9,
+          "windSpeed": 6.5,
+          "windGust": 14.3,
+          "precipitation": 0.1,
+          "recentPrecipitation": 0.2,
+          "sunshineDuration": 39918,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 46,
+          "rollingTemperatureMeans": [
+            18.7,
+            19.4,
+            19,
+            24
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-07",
+              "sunshineDuration": 42947,
+              "cloudCoverMean": 2
+            },
+            {
+              "date": "2026-05-08",
+              "sunshineDuration": 42529,
+              "cloudCoverMean": 7
+            },
+            {
+              "date": "2026-05-09",
+              "sunshineDuration": 28378,
+              "cloudCoverMean": 55
+            },
+            {
+              "date": "2026-05-10",
+              "sunshineDuration": 39918,
+              "cloudCoverMean": 46
+            }
+          ]
+        },
+        "weatherScore": 100,
+        "rollingGdd": 21.1,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.16,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1,
+        "ecologyMultiplier": 1.12,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      },
+      "dayAfterTomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-11",
+          "temperatureMax": 31.5,
+          "temperatureMin": 17.7,
+          "temperatureMean": 24.9,
+          "humidity": 35,
+          "humidityMin": 17,
+          "windSpeed": 4.4,
+          "windGust": 7.9,
+          "precipitation": 0.1,
+          "recentPrecipitation": 0.3,
+          "sunshineDuration": 42658,
+          "shortwaveRadiationSum": 22.7,
+          "cloudCoverMean": 30,
+          "rollingTemperatureMeans": [
+            19.4,
+            19,
+            24,
+            24.9
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-08",
+              "sunshineDuration": 42529,
+              "cloudCoverMean": 7
+            },
+            {
+              "date": "2026-05-09",
+              "sunshineDuration": 28378,
+              "cloudCoverMean": 55
+            },
+            {
+              "date": "2026-05-10",
+              "sunshineDuration": 39918,
+              "cloudCoverMean": 46
+            },
+            {
+              "date": "2026-05-11",
+              "sunshineDuration": 42658,
+              "cloudCoverMean": 30
+            }
+          ]
+        },
+        "weatherScore": 99,
+        "rollingGdd": 27.3,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.12,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1,
+        "ecologyMultiplier": 1.12,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -1834,7 +1834,7 @@
       "shortName": "石景山",
       "districtTag": "西山风口",
       "districtHint": "山前风口让飘散感更明显",
-      "score": 55,
+      "score": 57.3,
       "level": {
         "key": "medium",
         "label": "中风险"
@@ -1844,15 +1844,15 @@
         "temperatureMax": 23.5,
         "temperatureMin": 14.7,
         "temperatureMean": 19,
-        "humidity": 43,
-        "humidityMin": 34,
+        "humidity": 44,
+        "humidityMin": 36,
         "windSpeed": 3.3,
         "windGust": 9.7,
-        "precipitation": 0.3,
+        "precipitation": 0,
         "recentPrecipitation": 0,
-        "sunshineDuration": 16242,
-        "shortwaveRadiationSum": 13.8,
-        "cloudCoverMean": 59,
+        "sunshineDuration": 20191,
+        "shortwaveRadiationSum": 14.1,
+        "cloudCoverMean": 60,
         "rollingTemperatureMeans": [
           21.9,
           18.8,
@@ -1877,8 +1877,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 16242,
-            "cloudCoverMean": 59
+            "sunshineDuration": 20191,
+            "cloudCoverMean": 60
           }
         ]
       },
@@ -1886,8 +1886,8 @@
       "rollingGdd": 19.5,
       "gddBoost": 1.18,
       "precipitationPenalty": 1,
-      "drynessWindBoost": 1.16,
-      "sunshineBoost": 1,
+      "drynessWindBoost": 1.12,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 1.08,
@@ -1908,15 +1908,15 @@
           "temperatureMax": 33.3,
           "temperatureMin": 13.5,
           "temperatureMean": 24.3,
-          "humidity": 32,
-          "humidityMin": 7,
+          "humidity": 30,
+          "humidityMin": 8,
           "windSpeed": 5.4,
           "windGust": 13.4,
-          "precipitation": 0,
-          "recentPrecipitation": 0.3,
-          "sunshineDuration": 40142,
-          "shortwaveRadiationSum": 21.8,
-          "cloudCoverMean": 49,
+          "precipitation": 0.1,
+          "recentPrecipitation": 0,
+          "sunshineDuration": 40315,
+          "shortwaveRadiationSum": 22.5,
+          "cloudCoverMean": 45,
           "rollingTemperatureMeans": [
             18.8,
             19.8,
@@ -1936,13 +1936,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 16242,
-              "cloudCoverMean": 59
+              "sunshineDuration": 20191,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40142,
-              "cloudCoverMean": 49
+              "sunshineDuration": 40315,
+              "cloudCoverMean": 45
             }
           ]
         },
@@ -1968,15 +1968,15 @@
           "temperatureMax": 31.7,
           "temperatureMin": 18.9,
           "temperatureMean": 25.8,
-          "humidity": 27,
-          "humidityMin": 14,
+          "humidity": 31,
+          "humidityMin": 13,
           "windSpeed": 3.8,
           "windGust": 9.4,
-          "precipitation": 0,
-          "recentPrecipitation": 0.3,
-          "sunshineDuration": 42750,
+          "precipitation": 0.1,
+          "recentPrecipitation": 0.1,
+          "sunshineDuration": 42966,
           "shortwaveRadiationSum": 22.9,
-          "cloudCoverMean": 13,
+          "cloudCoverMean": 31,
           "rollingTemperatureMeans": [
             19.8,
             19,
@@ -1991,18 +1991,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 16242,
-              "cloudCoverMean": 59
+              "sunshineDuration": 20191,
+              "cloudCoverMean": 60
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40142,
-              "cloudCoverMean": 49
+              "sunshineDuration": 40315,
+              "cloudCoverMean": 45
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 42750,
-              "cloudCoverMean": 13
+              "sunshineDuration": 42966,
+              "cloudCoverMean": 31
             }
           ]
         },
@@ -2013,7 +2013,7 @@
         "drynessWindBoost": 1.16,
         "sunshineBoost": 1.16,
         "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
+        "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.08,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
@@ -2040,9 +2040,9 @@
         "windGust": 6.7,
         "precipitation": 0,
         "recentPrecipitation": 0,
-        "sunshineDuration": 24621,
-        "shortwaveRadiationSum": 15.3,
-        "cloudCoverMean": 59,
+        "sunshineDuration": 26148,
+        "shortwaveRadiationSum": 15.4,
+        "cloudCoverMean": 56,
         "rollingTemperatureMeans": [
           21.4,
           18.3,
@@ -2067,8 +2067,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 24621,
-            "cloudCoverMean": 59
+            "sunshineDuration": 26148,
+            "cloudCoverMean": 56
           }
         ]
       },
@@ -2098,15 +2098,15 @@
           "temperatureMax": 33.5,
           "temperatureMin": 11,
           "temperatureMean": 22.9,
-          "humidity": 38,
-          "humidityMin": 9,
+          "humidity": 39,
+          "humidityMin": 8,
           "windSpeed": 4.8,
           "windGust": 11.1,
           "precipitation": 0,
           "recentPrecipitation": 0,
-          "sunshineDuration": 41889,
-          "shortwaveRadiationSum": 22.2,
-          "cloudCoverMean": 39,
+          "sunshineDuration": 40014,
+          "shortwaveRadiationSum": 22,
+          "cloudCoverMean": 42,
           "rollingTemperatureMeans": [
             18.3,
             18.6,
@@ -2126,13 +2126,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 24621,
-              "cloudCoverMean": 59
+              "sunshineDuration": 26148,
+              "cloudCoverMean": 56
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41889,
-              "cloudCoverMean": 39
+              "sunshineDuration": 40014,
+              "cloudCoverMean": 42
             }
           ]
         },
@@ -2158,15 +2158,15 @@
           "temperatureMax": 32.5,
           "temperatureMin": 14.8,
           "temperatureMean": 24.3,
-          "humidity": 29,
-          "humidityMin": 12,
+          "humidity": 32,
+          "humidityMin": 13,
           "windSpeed": 2.5,
           "windGust": 6.2,
           "precipitation": 0,
           "recentPrecipitation": 0,
-          "sunshineDuration": 43043,
+          "sunshineDuration": 42926,
           "shortwaveRadiationSum": 22.9,
-          "cloudCoverMean": 14,
+          "cloudCoverMean": 29,
           "rollingTemperatureMeans": [
             18.6,
             18.6,
@@ -2181,18 +2181,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 24621,
-              "cloudCoverMean": 59
+              "sunshineDuration": 26148,
+              "cloudCoverMean": 56
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41889,
-              "cloudCoverMean": 39
+              "sunshineDuration": 40014,
+              "cloudCoverMean": 42
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 43043,
-              "cloudCoverMean": 14
+              "sunshineDuration": 42926,
+              "cloudCoverMean": 29
             }
           ]
         },
@@ -2205,196 +2205,6 @@
         "cloudPenalty": 1,
         "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.12,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      }
-    },
-    {
-      "id": "mentougou",
-      "name": "门头沟区",
-      "shortName": "门头沟",
-      "districtTag": "山谷通道",
-      "districtHint": "山前通风通道影响体感强弱",
-      "score": 37.1,
-      "level": {
-        "key": "medium",
-        "label": "中风险"
-      },
-      "weather": {
-        "date": "2026-05-09",
-        "temperatureMax": 23.1,
-        "temperatureMin": 12.8,
-        "temperatureMean": 17.8,
-        "humidity": 48,
-        "humidityMin": 35,
-        "windSpeed": 2.6,
-        "windGust": 9.7,
-        "precipitation": 0.2,
-        "recentPrecipitation": 0,
-        "sunshineDuration": 20156,
-        "shortwaveRadiationSum": 14.1,
-        "cloudCoverMean": 59,
-        "rollingTemperatureMeans": [
-          21.3,
-          18,
-          19,
-          17.8
-        ],
-        "recentConditions": [
-          {
-            "date": "2026-05-06",
-            "sunshineDuration": 16149,
-            "cloudCoverMean": 94
-          },
-          {
-            "date": "2026-05-07",
-            "sunshineDuration": 43397,
-            "cloudCoverMean": 3
-          },
-          {
-            "date": "2026-05-08",
-            "sunshineDuration": 42723,
-            "cloudCoverMean": 9
-          },
-          {
-            "date": "2026-05-09",
-            "sunshineDuration": 20156,
-            "cloudCoverMean": 59
-          }
-        ]
-      },
-      "weatherScore": 28,
-      "rollingGdd": 16.1,
-      "gddBoost": 1.16,
-      "precipitationPenalty": 1,
-      "drynessWindBoost": 1.16,
-      "sunshineBoost": 1.08,
-      "cloudPenalty": 0.93,
-      "sunnyStreakBoost": 1,
-      "ecologyMultiplier": 0.98,
-      "hotspots": [
-        "永定河沿线",
-        "潭柘寺周边绿地"
-      ],
-      "advice": "建议避开 10:00-16:00 的长时间户外停留，经过公园或林地边缘时做好基础防护。",
-      "headline": "门头沟区当前以气象条件和区级生态暴露驱动为主。",
-      "tomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-10",
-          "temperatureMax": 32.9,
-          "temperatureMin": 11.7,
-          "temperatureMean": 23.4,
-          "humidity": 33,
-          "humidityMin": 8,
-          "windSpeed": 5.1,
-          "windGust": 13.1,
-          "precipitation": 0,
-          "recentPrecipitation": 0.2,
-          "sunshineDuration": 40395,
-          "shortwaveRadiationSum": 22,
-          "cloudCoverMean": 47,
-          "rollingTemperatureMeans": [
-            18,
-            19,
-            17.8,
-            23.4
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-07",
-              "sunshineDuration": 43397,
-              "cloudCoverMean": 3
-            },
-            {
-              "date": "2026-05-08",
-              "sunshineDuration": 42723,
-              "cloudCoverMean": 9
-            },
-            {
-              "date": "2026-05-09",
-              "sunshineDuration": 20156,
-              "cloudCoverMean": 59
-            },
-            {
-              "date": "2026-05-10",
-              "sunshineDuration": 40395,
-              "cloudCoverMean": 47
-            }
-          ]
-        },
-        "weatherScore": 100,
-        "rollingGdd": 18.2,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.16,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 0.98,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      },
-      "dayAfterTomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-11",
-          "temperatureMax": 31.4,
-          "temperatureMin": 16.5,
-          "temperatureMean": 24.7,
-          "humidity": 30,
-          "humidityMin": 14,
-          "windSpeed": 3.8,
-          "windGust": 9.4,
-          "precipitation": 0,
-          "recentPrecipitation": 0.2,
-          "sunshineDuration": 43087,
-          "shortwaveRadiationSum": 23.1,
-          "cloudCoverMean": 16,
-          "rollingTemperatureMeans": [
-            19,
-            17.8,
-            23.4,
-            24.7
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-08",
-              "sunshineDuration": 42723,
-              "cloudCoverMean": 9
-            },
-            {
-              "date": "2026-05-09",
-              "sunshineDuration": 20156,
-              "cloudCoverMean": 59
-            },
-            {
-              "date": "2026-05-10",
-              "sunshineDuration": 40395,
-              "cloudCoverMean": 47
-            },
-            {
-              "date": "2026-05-11",
-              "sunshineDuration": 43087,
-              "cloudCoverMean": 16
-            }
-          ]
-        },
-        "weatherScore": 97,
-        "rollingGdd": 24.9,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.16,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 0.98,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -2414,15 +2224,15 @@
         "temperatureMax": 23,
         "temperatureMin": 13.6,
         "temperatureMean": 18.1,
-        "humidity": 51,
+        "humidity": 50,
         "humidityMin": 36,
         "windSpeed": 3.9,
         "windGust": 9.2,
-        "precipitation": 0.1,
+        "precipitation": 0.3,
         "recentPrecipitation": 0,
-        "sunshineDuration": 23197,
-        "shortwaveRadiationSum": 15.1,
-        "cloudCoverMean": 59,
+        "sunshineDuration": 24242,
+        "shortwaveRadiationSum": 15.3,
+        "cloudCoverMean": 55,
         "rollingTemperatureMeans": [
           20.3,
           17.1,
@@ -2447,8 +2257,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 23197,
-            "cloudCoverMean": 59
+            "sunshineDuration": 24242,
+            "cloudCoverMean": 55
           }
         ]
       },
@@ -2479,14 +2289,14 @@
           "temperatureMin": 13.3,
           "temperatureMean": 21.9,
           "humidity": 46,
-          "humidityMin": 10,
+          "humidityMin": 11,
           "windSpeed": 3.8,
           "windGust": 9.2,
           "precipitation": 0,
-          "recentPrecipitation": 0.1,
-          "sunshineDuration": 40053,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 23,
+          "recentPrecipitation": 0.3,
+          "sunshineDuration": 41776,
+          "shortwaveRadiationSum": 22.2,
+          "cloudCoverMean": 35,
           "rollingTemperatureMeans": [
             17.1,
             17.6,
@@ -2506,13 +2316,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 23197,
-              "cloudCoverMean": 59
+              "sunshineDuration": 24242,
+              "cloudCoverMean": 55
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40053,
-              "cloudCoverMean": 23
+              "sunshineDuration": 41776,
+              "cloudCoverMean": 35
             }
           ]
         },
@@ -2538,15 +2348,15 @@
           "temperatureMax": 31.5,
           "temperatureMin": 14.8,
           "temperatureMean": 23.2,
-          "humidity": 38,
-          "humidityMin": 12,
+          "humidity": 41,
+          "humidityMin": 18,
           "windSpeed": 4,
           "windGust": 8.3,
           "precipitation": 0,
-          "recentPrecipitation": 0.1,
-          "sunshineDuration": 43693,
-          "shortwaveRadiationSum": 22.9,
-          "cloudCoverMean": 10,
+          "recentPrecipitation": 0.3,
+          "sunshineDuration": 43580,
+          "shortwaveRadiationSum": 22.7,
+          "cloudCoverMean": 29,
           "rollingTemperatureMeans": [
             17.6,
             18.1,
@@ -2561,18 +2371,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 23197,
-              "cloudCoverMean": 59
+              "sunshineDuration": 24242,
+              "cloudCoverMean": 55
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40053,
-              "cloudCoverMean": 23
+              "sunshineDuration": 41776,
+              "cloudCoverMean": 35
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 43693,
-              "cloudCoverMean": 10
+              "sunshineDuration": 43580,
+              "cloudCoverMean": 29
             }
           ]
         },
@@ -2585,6 +2395,196 @@
         "cloudPenalty": 1,
         "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 0.94,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      }
+    },
+    {
+      "id": "mentougou",
+      "name": "门头沟区",
+      "shortName": "门头沟",
+      "districtTag": "山谷通道",
+      "districtHint": "山前通风通道影响体感强弱",
+      "score": 35.8,
+      "level": {
+        "key": "medium",
+        "label": "中风险"
+      },
+      "weather": {
+        "date": "2026-05-09",
+        "temperatureMax": 23.1,
+        "temperatureMin": 12.8,
+        "temperatureMean": 17.8,
+        "humidity": 48,
+        "humidityMin": 36,
+        "windSpeed": 2.6,
+        "windGust": 9.7,
+        "precipitation": 0,
+        "recentPrecipitation": 0,
+        "sunshineDuration": 21302,
+        "shortwaveRadiationSum": 14.2,
+        "cloudCoverMean": 59,
+        "rollingTemperatureMeans": [
+          21.3,
+          18,
+          19,
+          17.8
+        ],
+        "recentConditions": [
+          {
+            "date": "2026-05-06",
+            "sunshineDuration": 16149,
+            "cloudCoverMean": 94
+          },
+          {
+            "date": "2026-05-07",
+            "sunshineDuration": 43397,
+            "cloudCoverMean": 3
+          },
+          {
+            "date": "2026-05-08",
+            "sunshineDuration": 42723,
+            "cloudCoverMean": 9
+          },
+          {
+            "date": "2026-05-09",
+            "sunshineDuration": 21302,
+            "cloudCoverMean": 59
+          }
+        ]
+      },
+      "weatherScore": 28,
+      "rollingGdd": 16.1,
+      "gddBoost": 1.16,
+      "precipitationPenalty": 1,
+      "drynessWindBoost": 1.12,
+      "sunshineBoost": 1.08,
+      "cloudPenalty": 0.93,
+      "sunnyStreakBoost": 1,
+      "ecologyMultiplier": 0.98,
+      "hotspots": [
+        "永定河沿线",
+        "潭柘寺周边绿地"
+      ],
+      "advice": "建议避开 10:00-16:00 的长时间户外停留，经过公园或林地边缘时做好基础防护。",
+      "headline": "门头沟区当前以气象条件和区级生态暴露驱动为主。",
+      "tomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-10",
+          "temperatureMax": 32.9,
+          "temperatureMin": 11.7,
+          "temperatureMean": 23.4,
+          "humidity": 33,
+          "humidityMin": 9,
+          "windSpeed": 5.1,
+          "windGust": 13.1,
+          "precipitation": 0.6,
+          "recentPrecipitation": 0,
+          "sunshineDuration": 40177,
+          "shortwaveRadiationSum": 22.5,
+          "cloudCoverMean": 44,
+          "rollingTemperatureMeans": [
+            18,
+            19,
+            17.8,
+            23.4
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-07",
+              "sunshineDuration": 43397,
+              "cloudCoverMean": 3
+            },
+            {
+              "date": "2026-05-08",
+              "sunshineDuration": 42723,
+              "cloudCoverMean": 9
+            },
+            {
+              "date": "2026-05-09",
+              "sunshineDuration": 21302,
+              "cloudCoverMean": 59
+            },
+            {
+              "date": "2026-05-10",
+              "sunshineDuration": 40177,
+              "cloudCoverMean": 44
+            }
+          ]
+        },
+        "weatherScore": 100,
+        "rollingGdd": 18.2,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.16,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1,
+        "ecologyMultiplier": 0.98,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      },
+      "dayAfterTomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-11",
+          "temperatureMax": 31.4,
+          "temperatureMin": 16.5,
+          "temperatureMean": 24.7,
+          "humidity": 36,
+          "humidityMin": 16,
+          "windSpeed": 3.8,
+          "windGust": 9.4,
+          "precipitation": 0.4,
+          "recentPrecipitation": 0.6,
+          "sunshineDuration": 43087,
+          "shortwaveRadiationSum": 23.1,
+          "cloudCoverMean": 30,
+          "rollingTemperatureMeans": [
+            19,
+            17.8,
+            23.4,
+            24.7
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-08",
+              "sunshineDuration": 42723,
+              "cloudCoverMean": 9
+            },
+            {
+              "date": "2026-05-09",
+              "sunshineDuration": 21302,
+              "cloudCoverMean": 59
+            },
+            {
+              "date": "2026-05-10",
+              "sunshineDuration": 40177,
+              "cloudCoverMean": 44
+            },
+            {
+              "date": "2026-05-11",
+              "sunshineDuration": 43087,
+              "cloudCoverMean": 30
+            }
+          ]
+        },
+        "weatherScore": 97,
+        "rollingGdd": 24.9,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.16,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1.06,
+        "ecologyMultiplier": 0.98,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -2604,14 +2604,14 @@
         "temperatureMax": 23.1,
         "temperatureMin": 12.6,
         "temperatureMean": 17.6,
-        "humidity": 54,
+        "humidity": 52,
         "humidityMin": 36,
         "windSpeed": 2.9,
         "windGust": 7.2,
-        "precipitation": 0.5,
+        "precipitation": 0.2,
         "recentPrecipitation": 0,
-        "sunshineDuration": 24341,
-        "shortwaveRadiationSum": 15,
+        "sunshineDuration": 23252,
+        "shortwaveRadiationSum": 14.6,
         "cloudCoverMean": 58,
         "rollingTemperatureMeans": [
           20.4,
@@ -2637,7 +2637,7 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 24341,
+            "sunshineDuration": 23252,
             "cloudCoverMean": 58
           }
         ]
@@ -2669,14 +2669,14 @@
           "temperatureMin": 10.4,
           "temperatureMean": 21.2,
           "humidity": 49,
-          "humidityMin": 14,
+          "humidityMin": 13,
           "windSpeed": 5.3,
           "windGust": 10.7,
           "precipitation": 0,
-          "recentPrecipitation": 0.5,
-          "sunshineDuration": 40804,
+          "recentPrecipitation": 0.2,
+          "sunshineDuration": 42695,
           "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 34,
+          "cloudCoverMean": 30,
           "rollingTemperatureMeans": [
             17.5,
             17.4,
@@ -2696,13 +2696,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 24341,
+              "sunshineDuration": 23252,
               "cloudCoverMean": 58
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40804,
-              "cloudCoverMean": 34
+              "sunshineDuration": 42695,
+              "cloudCoverMean": 30
             }
           ]
         },
@@ -2728,15 +2728,15 @@
           "temperatureMax": 30.4,
           "temperatureMin": 14.1,
           "temperatureMean": 22.8,
-          "humidity": 40,
+          "humidity": 42,
           "humidityMin": 21,
           "windSpeed": 4,
           "windGust": 7.3,
           "precipitation": 0,
-          "recentPrecipitation": 0.5,
+          "recentPrecipitation": 0.2,
           "sunshineDuration": 42934,
-          "shortwaveRadiationSum": 22.5,
-          "cloudCoverMean": 16,
+          "shortwaveRadiationSum": 22.4,
+          "cloudCoverMean": 31,
           "rollingTemperatureMeans": [
             17.4,
             17.6,
@@ -2751,18 +2751,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 24341,
+              "sunshineDuration": 23252,
               "cloudCoverMean": 58
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40804,
-              "cloudCoverMean": 34
+              "sunshineDuration": 42695,
+              "cloudCoverMean": 30
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 42934,
-              "cloudCoverMean": 16
+              "cloudCoverMean": 31
             }
           ]
         },
@@ -2784,7 +2784,7 @@
       "shortName": "平谷",
       "districtTag": "郊野开阔",
       "districtHint": "郊野开阔地受天气驱动更强",
-      "score": 31.3,
+      "score": 30.2,
       "level": {
         "key": "medium",
         "label": "中风险"
@@ -2795,14 +2795,14 @@
         "temperatureMin": 12.8,
         "temperatureMean": 17.6,
         "humidity": 53,
-        "humidityMin": 38,
+        "humidityMin": 40,
         "windSpeed": 3.8,
         "windGust": 9.6,
-        "precipitation": 0.6,
+        "precipitation": 0.5,
         "recentPrecipitation": 0,
-        "sunshineDuration": 28013,
-        "shortwaveRadiationSum": 15.5,
-        "cloudCoverMean": 60,
+        "sunshineDuration": 24807,
+        "shortwaveRadiationSum": 15.2,
+        "cloudCoverMean": 56,
         "rollingTemperatureMeans": [
           19.6,
           16.6,
@@ -2827,8 +2827,8 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 28013,
-            "cloudCoverMean": 60
+            "sunshineDuration": 24807,
+            "cloudCoverMean": 56
           }
         ]
       },
@@ -2837,7 +2837,7 @@
       "gddBoost": 1.11,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.12,
-      "sunshineBoost": 1.12,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 0.93,
@@ -2858,15 +2858,15 @@
           "temperatureMax": 31.4,
           "temperatureMin": 13.4,
           "temperatureMean": 21.8,
-          "humidity": 47,
-          "humidityMin": 12,
+          "humidity": 46,
+          "humidityMin": 14,
           "windSpeed": 3.8,
           "windGust": 9,
           "precipitation": 0,
-          "recentPrecipitation": 0.6,
-          "sunshineDuration": 40491,
-          "shortwaveRadiationSum": 22.4,
-          "cloudCoverMean": 32,
+          "recentPrecipitation": 0.5,
+          "sunshineDuration": 43713,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 26,
           "rollingTemperatureMeans": [
             16.6,
             17.2,
@@ -2886,13 +2886,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 28013,
-              "cloudCoverMean": 60
+              "sunshineDuration": 24807,
+              "cloudCoverMean": 56
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40491,
-              "cloudCoverMean": 32
+              "sunshineDuration": 43713,
+              "cloudCoverMean": 26
             }
           ]
         },
@@ -2919,14 +2919,14 @@
           "temperatureMin": 14.2,
           "temperatureMean": 22.8,
           "humidity": 40,
-          "humidityMin": 18,
+          "humidityMin": 20,
           "windSpeed": 3.5,
           "windGust": 7.6,
           "precipitation": 0,
-          "recentPrecipitation": 0.6,
-          "sunshineDuration": 43717,
-          "shortwaveRadiationSum": 22.8,
-          "cloudCoverMean": 11,
+          "recentPrecipitation": 0.5,
+          "sunshineDuration": 43492,
+          "shortwaveRadiationSum": 22.6,
+          "cloudCoverMean": 36,
           "rollingTemperatureMeans": [
             17.2,
             17.6,
@@ -2941,18 +2941,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 28013,
-              "cloudCoverMean": 60
+              "sunshineDuration": 24807,
+              "cloudCoverMean": 56
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 40491,
-              "cloudCoverMean": 32
+              "sunshineDuration": 43713,
+              "cloudCoverMean": 26
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 43717,
-              "cloudCoverMean": 11
+              "sunshineDuration": 43492,
+              "cloudCoverMean": 36
             }
           ]
         },
@@ -2974,7 +2974,7 @@
       "shortName": "怀柔",
       "districtTag": "湖区林地",
       "districtHint": "湖区林地局部波动更大",
-      "score": 24.9,
+      "score": 24,
       "level": {
         "key": "low",
         "label": "低风险"
@@ -2984,14 +2984,14 @@
         "temperatureMax": 22.5,
         "temperatureMin": 12.2,
         "temperatureMean": 17.1,
-        "humidity": 54,
-        "humidityMin": 40,
+        "humidity": 55,
+        "humidityMin": 42,
         "windSpeed": 2.2,
         "windGust": 6.9,
         "precipitation": 0,
         "recentPrecipitation": 0,
-        "sunshineDuration": 28685,
-        "shortwaveRadiationSum": 15.4,
+        "sunshineDuration": 26636,
+        "shortwaveRadiationSum": 15.1,
         "cloudCoverMean": 57,
         "rollingTemperatureMeans": [
           19.9,
@@ -3017,7 +3017,7 @@
           },
           {
             "date": "2026-05-09",
-            "sunshineDuration": 28685,
+            "sunshineDuration": 26636,
             "cloudCoverMean": 57
           }
         ]
@@ -3027,7 +3027,7 @@
       "gddBoost": 1.11,
       "precipitationPenalty": 1,
       "drynessWindBoost": 1.08,
-      "sunshineBoost": 1.12,
+      "sunshineBoost": 1.08,
       "cloudPenalty": 0.93,
       "sunnyStreakBoost": 1,
       "ecologyMultiplier": 0.95,
@@ -3048,15 +3048,15 @@
           "temperatureMax": 31.6,
           "temperatureMin": 9.9,
           "temperatureMean": 21,
-          "humidity": 47,
-          "humidityMin": 13,
+          "humidity": 49,
+          "humidityMin": 12,
           "windSpeed": 5.1,
           "windGust": 11.3,
           "precipitation": 0,
           "recentPrecipitation": 0,
-          "sunshineDuration": 41273,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 34,
+          "sunshineDuration": 43138,
+          "shortwaveRadiationSum": 22.3,
+          "cloudCoverMean": 33,
           "rollingTemperatureMeans": [
             16.9,
             16.8,
@@ -3076,13 +3076,13 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 28685,
+              "sunshineDuration": 26636,
               "cloudCoverMean": 57
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41273,
-              "cloudCoverMean": 34
+              "sunshineDuration": 43138,
+              "cloudCoverMean": 33
             }
           ]
         },
@@ -3108,15 +3108,15 @@
           "temperatureMax": 30.5,
           "temperatureMin": 15.4,
           "temperatureMean": 22.9,
-          "humidity": 39,
-          "humidityMin": 17,
+          "humidity": 41,
+          "humidityMin": 19,
           "windSpeed": 2.6,
           "windGust": 6.1,
           "precipitation": 0,
           "recentPrecipitation": 0,
           "sunshineDuration": 43365,
-          "shortwaveRadiationSum": 22.7,
-          "cloudCoverMean": 19,
+          "shortwaveRadiationSum": 22.5,
+          "cloudCoverMean": 30,
           "rollingTemperatureMeans": [
             16.8,
             17.1,
@@ -3131,18 +3131,18 @@
             },
             {
               "date": "2026-05-09",
-              "sunshineDuration": 28685,
+              "sunshineDuration": 26636,
               "cloudCoverMean": 57
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 41273,
-              "cloudCoverMean": 34
+              "sunshineDuration": 43138,
+              "cloudCoverMean": 33
             },
             {
               "date": "2026-05-11",
               "sunshineDuration": 43365,
-              "cloudCoverMean": 19
+              "cloudCoverMean": 30
             }
           ]
         },
@@ -3174,15 +3174,15 @@
         "temperatureMax": 19.9,
         "temperatureMin": 7.1,
         "temperatureMean": 13.9,
-        "humidity": 55,
-        "humidityMin": 41,
+        "humidity": 57,
+        "humidityMin": 43,
         "windSpeed": 3.9,
         "windGust": 10.2,
         "precipitation": 0,
         "recentPrecipitation": 0,
         "sunshineDuration": 38700,
-        "shortwaveRadiationSum": 18.7,
-        "cloudCoverMean": 51,
+        "shortwaveRadiationSum": 19.1,
+        "cloudCoverMean": 50,
         "rollingTemperatureMeans": [
           17.7,
           13.1,
@@ -3208,7 +3208,7 @@
           {
             "date": "2026-05-09",
             "sunshineDuration": 38700,
-            "cloudCoverMean": 51
+            "cloudCoverMean": 50
           }
         ]
       },
@@ -3238,15 +3238,15 @@
           "temperatureMax": 28.5,
           "temperatureMin": 5.2,
           "temperatureMean": 18.3,
-          "humidity": 40,
-          "humidityMin": 11,
+          "humidity": 41,
+          "humidityMin": 10,
           "windSpeed": 4.4,
           "windGust": 10.3,
           "precipitation": 0,
           "recentPrecipitation": 0,
-          "sunshineDuration": 42812,
-          "shortwaveRadiationSum": 23.3,
-          "cloudCoverMean": 34,
+          "sunshineDuration": 41712,
+          "shortwaveRadiationSum": 22.9,
+          "cloudCoverMean": 44,
           "rollingTemperatureMeans": [
             13.1,
             12.6,
@@ -3267,12 +3267,12 @@
             {
               "date": "2026-05-09",
               "sunshineDuration": 38700,
-              "cloudCoverMean": 51
+              "cloudCoverMean": 50
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 42812,
-              "cloudCoverMean": 34
+              "sunshineDuration": 41712,
+              "cloudCoverMean": 44
             }
           ]
         },
@@ -3298,15 +3298,15 @@
           "temperatureMax": 29,
           "temperatureMin": 7.2,
           "temperatureMean": 18.7,
-          "humidity": 34,
-          "humidityMin": 11,
+          "humidity": 40,
+          "humidityMin": 13,
           "windSpeed": 4.3,
           "windGust": 9.8,
           "precipitation": 0,
           "recentPrecipitation": 0,
-          "sunshineDuration": 44520,
-          "shortwaveRadiationSum": 24.6,
-          "cloudCoverMean": 18,
+          "sunshineDuration": 44312,
+          "shortwaveRadiationSum": 24.4,
+          "cloudCoverMean": 26,
           "rollingTemperatureMeans": [
             12.6,
             13.9,
@@ -3322,17 +3322,17 @@
             {
               "date": "2026-05-09",
               "sunshineDuration": 38700,
-              "cloudCoverMean": 51
+              "cloudCoverMean": 50
             },
             {
               "date": "2026-05-10",
-              "sunshineDuration": 42812,
-              "cloudCoverMean": 34
+              "sunshineDuration": 41712,
+              "cloudCoverMean": 44
             },
             {
               "date": "2026-05-11",
-              "sunshineDuration": 44520,
-              "cloudCoverMean": 18
+              "sunshineDuration": 44312,
+              "cloudCoverMean": 26
             }
           ]
         },
