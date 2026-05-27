@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27 17:17",
+  "generatedAt": "2026-05-27 19:27",
   "city": {
     "id": "beijing",
     "name": "北京市"
@@ -16,7 +16,7 @@
         "label": "高风险"
       }
     },
-    "updatedAt": "2026-05-27 17:17"
+    "updatedAt": "2026-05-27 19:27"
   },
   "topDistrict": {
     "id": "haidian",
@@ -200,6 +200,23 @@
       "sunnyStreakBoost": 1
     },
     {
+      "id": "mentougou",
+      "name": "门头沟区",
+      "shortName": "门头沟",
+      "districtTag": "山谷通道",
+      "districtHint": "山前通风通道影响体感强弱",
+      "score": 52.4,
+      "level": {
+        "key": "medium",
+        "label": "中风险"
+      },
+      "ecologyMultiplier": 0.98,
+      "rollingGdd": 23.7,
+      "sunshineBoost": 1.16,
+      "cloudPenalty": 1,
+      "sunnyStreakBoost": 1
+    },
+    {
       "id": "xicheng",
       "name": "西城区",
       "shortName": "西城",
@@ -248,23 +265,6 @@
       "rollingGdd": 26.3,
       "sunshineBoost": 1.16,
       "cloudPenalty": 0.93,
-      "sunnyStreakBoost": 1
-    },
-    {
-      "id": "mentougou",
-      "name": "门头沟区",
-      "shortName": "门头沟",
-      "districtTag": "山谷通道",
-      "districtHint": "山前通风通道影响体感强弱",
-      "score": 43.7,
-      "level": {
-        "key": "medium",
-        "label": "中风险"
-      },
-      "ecologyMultiplier": 0.98,
-      "rollingGdd": 23.7,
-      "sunshineBoost": 1.16,
-      "cloudPenalty": 1,
       "sunnyStreakBoost": 1
     },
     {
@@ -321,7 +321,7 @@
         "temperatureMean": 22.1,
         "humidity": 74,
         "humidityMin": 51,
-        "windSpeed": 3.9,
+        "windSpeed": 4.2,
         "windGust": 10,
         "precipitation": 0,
         "recentPrecipitation": 6.8,
@@ -512,7 +512,7 @@
         "temperatureMean": 21.9,
         "humidity": 77,
         "humidityMin": 53,
-        "windSpeed": 4,
+        "windSpeed": 3.8,
         "windGust": 7.8,
         "precipitation": 0.4,
         "recentPrecipitation": 3.3,
@@ -702,7 +702,7 @@
         "temperatureMean": 22.7,
         "humidity": 72,
         "humidityMin": 51,
-        "windSpeed": 3.5,
+        "windSpeed": 3.6,
         "windGust": 9.1,
         "precipitation": 0.1,
         "recentPrecipitation": 7.2,
@@ -893,7 +893,7 @@
         "temperatureMean": 22.8,
         "humidity": 72,
         "humidityMin": 50,
-        "windSpeed": 3.1,
+        "windSpeed": 3.6,
         "windGust": 8.9,
         "precipitation": 0,
         "recentPrecipitation": 9.2,
@@ -1084,7 +1084,7 @@
         "temperatureMean": 22.3,
         "humidity": 73,
         "humidityMin": 52,
-        "windSpeed": 4,
+        "windSpeed": 4.6,
         "windGust": 10,
         "precipitation": 0,
         "recentPrecipitation": 2,
@@ -1274,7 +1274,7 @@
         "temperatureMean": 22.7,
         "humidity": 73,
         "humidityMin": 49,
-        "windSpeed": 3.3,
+        "windSpeed": 3.7,
         "windGust": 8.9,
         "precipitation": 0,
         "recentPrecipitation": 10,
@@ -1464,7 +1464,7 @@
         "temperatureMean": 21.7,
         "humidity": 75,
         "humidityMin": 50,
-        "windSpeed": 2.7,
+        "windSpeed": 2.8,
         "windGust": 7,
         "precipitation": 0.4,
         "recentPrecipitation": 7.2,
@@ -1654,7 +1654,7 @@
         "temperatureMean": 21.8,
         "humidity": 74,
         "humidityMin": 53,
-        "windSpeed": 3.3,
+        "windSpeed": 3.6,
         "windGust": 7.9,
         "precipitation": 0,
         "recentPrecipitation": 3.4,
@@ -1844,7 +1844,7 @@
         "temperatureMean": 22.5,
         "humidity": 72,
         "humidityMin": 51,
-        "windSpeed": 4.8,
+        "windSpeed": 4.3,
         "windGust": 9.1,
         "precipitation": 0,
         "recentPrecipitation": 9.1,
@@ -2034,7 +2034,7 @@
         "temperatureMean": 22.8,
         "humidity": 72,
         "humidityMin": 49,
-        "windSpeed": 3.4,
+        "windSpeed": 3.7,
         "windGust": 9.2,
         "precipitation": 0,
         "recentPrecipitation": 9.5,
@@ -2208,6 +2208,196 @@
       }
     },
     {
+      "id": "mentougou",
+      "name": "门头沟区",
+      "shortName": "门头沟",
+      "districtTag": "山谷通道",
+      "districtHint": "山前通风通道影响体感强弱",
+      "score": 52.4,
+      "level": {
+        "key": "medium",
+        "label": "中风险"
+      },
+      "weather": {
+        "date": "2026-05-27",
+        "temperatureMax": 26.5,
+        "temperatureMin": 15.2,
+        "temperatureMean": 21.7,
+        "humidity": 72,
+        "humidityMin": 36,
+        "windSpeed": 5.2,
+        "windGust": 11.7,
+        "precipitation": 0,
+        "recentPrecipitation": 9.1,
+        "sunshineDuration": 46527,
+        "shortwaveRadiationSum": 22.4,
+        "cloudCoverMean": 53,
+        "rollingTemperatureMeans": [
+          22.4,
+          19.5,
+          20.1,
+          21.7
+        ],
+        "recentConditions": [
+          {
+            "date": "2026-05-24",
+            "sunshineDuration": 34316,
+            "cloudCoverMean": 80
+          },
+          {
+            "date": "2026-05-25",
+            "sunshineDuration": 0,
+            "cloudCoverMean": 93
+          },
+          {
+            "date": "2026-05-26",
+            "sunshineDuration": 38604,
+            "cloudCoverMean": 65
+          },
+          {
+            "date": "2026-05-27",
+            "sunshineDuration": 46527,
+            "cloudCoverMean": 53
+          }
+        ]
+      },
+      "weatherScore": 56.3,
+      "rollingGdd": 23.7,
+      "gddBoost": 1.18,
+      "precipitationPenalty": 0.62,
+      "drynessWindBoost": 1.12,
+      "sunshineBoost": 1.16,
+      "cloudPenalty": 1,
+      "sunnyStreakBoost": 1,
+      "ecologyMultiplier": 0.98,
+      "hotspots": [
+        "永定河沿线",
+        "潭柘寺周边绿地"
+      ],
+      "advice": "建议避开 10:00-16:00 的长时间户外停留，经过公园或林地边缘时做好基础防护。",
+      "headline": "门头沟区当前以气象条件和区级生态暴露驱动为主。",
+      "tomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-28",
+          "temperatureMax": 28.9,
+          "temperatureMin": 18.2,
+          "temperatureMean": 23.1,
+          "humidity": 44,
+          "humidityMin": 24,
+          "windSpeed": 5.6,
+          "windGust": 13.2,
+          "precipitation": 0,
+          "recentPrecipitation": 0,
+          "sunshineDuration": 49417,
+          "shortwaveRadiationSum": 27.2,
+          "cloudCoverMean": 16,
+          "rollingTemperatureMeans": [
+            19.5,
+            20.1,
+            21.7,
+            23.1
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-25",
+              "sunshineDuration": 0,
+              "cloudCoverMean": 93
+            },
+            {
+              "date": "2026-05-26",
+              "sunshineDuration": 38604,
+              "cloudCoverMean": 65
+            },
+            {
+              "date": "2026-05-27",
+              "sunshineDuration": 46527,
+              "cloudCoverMean": 53
+            },
+            {
+              "date": "2026-05-28",
+              "sunshineDuration": 49417,
+              "cloudCoverMean": 16
+            }
+          ]
+        },
+        "weatherScore": 97.2,
+        "rollingGdd": 24.4,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.16,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1,
+        "ecologyMultiplier": 0.98,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      },
+      "dayAfterTomorrow": {
+        "score": 100,
+        "level": {
+          "key": "high",
+          "label": "高风险"
+        },
+        "weather": {
+          "date": "2026-05-29",
+          "temperatureMax": 31.1,
+          "temperatureMin": 15,
+          "temperatureMean": 23.2,
+          "humidity": 52,
+          "humidityMin": 22,
+          "windSpeed": 4.2,
+          "windGust": 10,
+          "precipitation": 0,
+          "recentPrecipitation": 0,
+          "sunshineDuration": 49647,
+          "shortwaveRadiationSum": 27.1,
+          "cloudCoverMean": 8,
+          "rollingTemperatureMeans": [
+            20.1,
+            21.7,
+            23.1,
+            23.2
+          ],
+          "recentConditions": [
+            {
+              "date": "2026-05-26",
+              "sunshineDuration": 38604,
+              "cloudCoverMean": 65
+            },
+            {
+              "date": "2026-05-27",
+              "sunshineDuration": 46527,
+              "cloudCoverMean": 53
+            },
+            {
+              "date": "2026-05-28",
+              "sunshineDuration": 49417,
+              "cloudCoverMean": 16
+            },
+            {
+              "date": "2026-05-29",
+              "sunshineDuration": 49647,
+              "cloudCoverMean": 8
+            }
+          ]
+        },
+        "weatherScore": 82,
+        "rollingGdd": 28.1,
+        "gddBoost": 1.18,
+        "precipitationPenalty": 1,
+        "drynessWindBoost": 1.16,
+        "sunshineBoost": 1.16,
+        "cloudPenalty": 1,
+        "sunnyStreakBoost": 1.06,
+        "ecologyMultiplier": 0.98,
+        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
+      }
+    },
+    {
       "id": "xicheng",
       "name": "西城区",
       "shortName": "西城",
@@ -2225,7 +2415,7 @@
         "temperatureMean": 22.8,
         "humidity": 71,
         "humidityMin": 50,
-        "windSpeed": 3.3,
+        "windSpeed": 3.6,
         "windGust": 9.1,
         "precipitation": 0,
         "recentPrecipitation": 8.7,
@@ -2416,7 +2606,7 @@
         "temperatureMean": 22.2,
         "humidity": 73,
         "humidityMin": 51,
-        "windSpeed": 3.9,
+        "windSpeed": 4.5,
         "windGust": 10.6,
         "precipitation": 0,
         "recentPrecipitation": 8.3,
@@ -2606,7 +2796,7 @@
         "temperatureMean": 22.1,
         "humidity": 75,
         "humidityMin": 49,
-        "windSpeed": 4.1,
+        "windSpeed": 4.3,
         "windGust": 9.2,
         "precipitation": 0,
         "recentPrecipitation": 9,
@@ -2670,7 +2860,7 @@
           "temperatureMean": 23.2,
           "humidity": 48,
           "humidityMin": 28,
-          "windSpeed": 4.9,
+          "windSpeed": 4.7,
           "windGust": 10.2,
           "precipitation": 0,
           "recentPrecipitation": 0,
@@ -2775,196 +2965,6 @@
         "cloudPenalty": 1,
         "sunnyStreakBoost": 1.06,
         "ecologyMultiplier": 1.04,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      }
-    },
-    {
-      "id": "mentougou",
-      "name": "门头沟区",
-      "shortName": "门头沟",
-      "districtTag": "山谷通道",
-      "districtHint": "山前通风通道影响体感强弱",
-      "score": 43.7,
-      "level": {
-        "key": "medium",
-        "label": "中风险"
-      },
-      "weather": {
-        "date": "2026-05-27",
-        "temperatureMax": 26.5,
-        "temperatureMin": 15.2,
-        "temperatureMean": 21.7,
-        "humidity": 72,
-        "humidityMin": 36,
-        "windSpeed": 4.7,
-        "windGust": 11.7,
-        "precipitation": 0,
-        "recentPrecipitation": 9.1,
-        "sunshineDuration": 46527,
-        "shortwaveRadiationSum": 22.4,
-        "cloudCoverMean": 53,
-        "rollingTemperatureMeans": [
-          22.4,
-          19.5,
-          20.1,
-          21.7
-        ],
-        "recentConditions": [
-          {
-            "date": "2026-05-24",
-            "sunshineDuration": 34316,
-            "cloudCoverMean": 80
-          },
-          {
-            "date": "2026-05-25",
-            "sunshineDuration": 0,
-            "cloudCoverMean": 93
-          },
-          {
-            "date": "2026-05-26",
-            "sunshineDuration": 38604,
-            "cloudCoverMean": 65
-          },
-          {
-            "date": "2026-05-27",
-            "sunshineDuration": 46527,
-            "cloudCoverMean": 53
-          }
-        ]
-      },
-      "weatherScore": 46.9,
-      "rollingGdd": 23.7,
-      "gddBoost": 1.18,
-      "precipitationPenalty": 0.62,
-      "drynessWindBoost": 1.12,
-      "sunshineBoost": 1.16,
-      "cloudPenalty": 1,
-      "sunnyStreakBoost": 1,
-      "ecologyMultiplier": 0.98,
-      "hotspots": [
-        "永定河沿线",
-        "潭柘寺周边绿地"
-      ],
-      "advice": "建议避开 10:00-16:00 的长时间户外停留，经过公园或林地边缘时做好基础防护。",
-      "headline": "门头沟区当前以气象条件和区级生态暴露驱动为主。",
-      "tomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-28",
-          "temperatureMax": 28.9,
-          "temperatureMin": 18.2,
-          "temperatureMean": 23.1,
-          "humidity": 44,
-          "humidityMin": 24,
-          "windSpeed": 5.6,
-          "windGust": 13.2,
-          "precipitation": 0,
-          "recentPrecipitation": 0,
-          "sunshineDuration": 49417,
-          "shortwaveRadiationSum": 27.2,
-          "cloudCoverMean": 16,
-          "rollingTemperatureMeans": [
-            19.5,
-            20.1,
-            21.7,
-            23.1
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-25",
-              "sunshineDuration": 0,
-              "cloudCoverMean": 93
-            },
-            {
-              "date": "2026-05-26",
-              "sunshineDuration": 38604,
-              "cloudCoverMean": 65
-            },
-            {
-              "date": "2026-05-27",
-              "sunshineDuration": 46527,
-              "cloudCoverMean": 53
-            },
-            {
-              "date": "2026-05-28",
-              "sunshineDuration": 49417,
-              "cloudCoverMean": 16
-            }
-          ]
-        },
-        "weatherScore": 97.2,
-        "rollingGdd": 24.4,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.16,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1,
-        "ecologyMultiplier": 0.98,
-        "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
-      },
-      "dayAfterTomorrow": {
-        "score": 100,
-        "level": {
-          "key": "high",
-          "label": "高风险"
-        },
-        "weather": {
-          "date": "2026-05-29",
-          "temperatureMax": 31.1,
-          "temperatureMin": 15,
-          "temperatureMean": 23.2,
-          "humidity": 52,
-          "humidityMin": 22,
-          "windSpeed": 4.2,
-          "windGust": 10,
-          "precipitation": 0,
-          "recentPrecipitation": 0,
-          "sunshineDuration": 49647,
-          "shortwaveRadiationSum": 27.1,
-          "cloudCoverMean": 8,
-          "rollingTemperatureMeans": [
-            20.1,
-            21.7,
-            23.1,
-            23.2
-          ],
-          "recentConditions": [
-            {
-              "date": "2026-05-26",
-              "sunshineDuration": 38604,
-              "cloudCoverMean": 65
-            },
-            {
-              "date": "2026-05-27",
-              "sunshineDuration": 46527,
-              "cloudCoverMean": 53
-            },
-            {
-              "date": "2026-05-28",
-              "sunshineDuration": 49417,
-              "cloudCoverMean": 16
-            },
-            {
-              "date": "2026-05-29",
-              "sunshineDuration": 49647,
-              "cloudCoverMean": 8
-            }
-          ]
-        },
-        "weatherScore": 82,
-        "rollingGdd": 28.1,
-        "gddBoost": 1.18,
-        "precipitationPenalty": 1,
-        "drynessWindBoost": 1.16,
-        "sunshineBoost": 1.16,
-        "cloudPenalty": 1,
-        "sunnyStreakBoost": 1.06,
-        "ecologyMultiplier": 0.98,
         "advice": "建议减少外出，尤其注意大型公园、滨河绿地和午后风口区域；外出请做好口鼻防护。"
       }
     },
@@ -3176,7 +3176,7 @@
         "temperatureMean": 19.2,
         "humidity": 75,
         "humidityMin": 56,
-        "windSpeed": 4.1,
+        "windSpeed": 3.6,
         "windGust": 9.6,
         "precipitation": 0.2,
         "recentPrecipitation": 11.1,
